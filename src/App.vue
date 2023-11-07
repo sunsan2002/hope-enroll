@@ -1,30 +1,24 @@
+<!--
+ * @Author: sunsan 2390864551@qq.com
+ * @Date: 2023-11-05 20:50:59
+ * @LastEditors: sunsan 2390864551@qq.com
+ * @LastEditTime: 2023-11-07 22:06:11
+ * @FilePath: \hopeEnroll\hope_enroll\src\App.vue
+ * @Description: vue根组件
+-->
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div>
+    <router-view></router-view>
+  </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script setup>
+console.log('App.vue');
+</script>
 
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+<style>
+*{
+  padding: 0;
+  margin: 0;
 }
 </style>

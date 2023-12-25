@@ -383,6 +383,7 @@ body {
     }
     &:hover{
         cursor: pointer;
+        background-color: #fffdfd;
     }
     &:after {
         content: "";

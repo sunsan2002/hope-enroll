@@ -34,7 +34,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="right">
+                <div class="right" >
                     <el-icon class="but" :size="40" @click="increase"><ArrowRightBold /></el-icon>
                 </div>
             </div>
@@ -331,9 +331,9 @@ defineExpose({
 }
 .containe{
     position: relative;
-    margin-top:8%;
-    margin-bottom:5%;
+    margin-top:2%;
     height: 85%;
+    padding-top: 2%;
     background-color: rgba(98, 98, 98, 0.177);
     display: flex;
     justify-content: center;
@@ -351,7 +351,7 @@ defineExpose({
 // }
 .content{
     position: relative;
-    height: 80%;
+    height: 70%;
     .left {
         position: absolute;
         width: 8%;

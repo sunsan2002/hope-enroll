@@ -1,8 +1,8 @@
 <!--
  * @Author: sunsan 2390864551@qq.com
  * @Date: 2023-11-07 21:08:17
- * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-11-30 20:33:29
+ * @LastEditors: sunsan 2390864551@qq.com
+ * @LastEditTime: 2023-12-25 22:36:47
  * @FilePath: \hopeEnroll\hope_enroll\src\views\main\Foot.vue
  * @Description: 底部组件
 -->
@@ -22,12 +22,12 @@
       </div>
       <div class="right">
         <dl>
-          <dt>Hope工作室</dt>
-          <dd><a href="">关于</a></dd>
-          <dd><a href="">联系我们</a></dd>
-          <dd><a href="">服务条款</a></dd>
-          <dd><a href="">客户服务</a></dd>
-          <dd><a href="">帮助</a></dd>
+          <dt>公众号</dt>
+          <img src="../../assets/yard1.png" class="dtimg">
+        </dl>
+        <dl>
+          <dt>QQ招新群</dt>
+          <img src="../../assets/qqcourt.jpg" class="dtimg">
         </dl>
         <dl>
           <dt>开发者</dt>
@@ -111,13 +111,15 @@ a {
 
 .footer .right dl {
   float: left;
-  margin-left: 110px;
+  margin-left: 80px;
   margin-right: 20px;
   font-size: 13px;
   line-height: 21px;
-  color: #ffffff;
+  color: rgb(185, 185, 185);
 }
-
+.dtimg{
+  height: 100px;
+}
 .more {
   margin-top: 260px;
 }

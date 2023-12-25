@@ -8,54 +8,56 @@
         <div class="container"   @mouseenter.once="data.isHovered = true" @mouseleave="data.isHovered = false">
             <div class="glass" style="--r:-15;" >
                 <div class="hint">
-                    <img v-if="storeUser.state1" src="../assets/iconfont/未完成.png" />
+                    <img v-if="!storeUser.state1" src="../assets/iconfont/未完成.png" />
                     <img v-else src="../assets/iconfont/已完成.png" />
                 </div>
                 <div class="content">
                 <h2>01</h2>
                 <h3>测试1</h3>
-                <a v-if="storeUser.state1" class="but" @click="test(data.url1)">立即测试</a>
+                <a v-if="!storeUser.state1" class="but" @click="test(data.url1)">立即测试</a>
                 <a v-else class="disable" @click="reminder()">已作答</a>
             </div>
             </div>
             <div class="glass" style="--r:5;" >
                 <div class="hint">
-                    <img v-if="storeUser.state2" src="../assets/iconfont/未完成.png" />
+                    <img v-if="!storeUser.state2" src="../assets/iconfont/未完成.png" />
                     <img v-else src="../assets/iconfont/已完成.png" />
                 </div>
                 <div class="content">
                     <h2>02</h2>
                     <h3>测试2</h3>
-                    <a v-if="storeUser.state2" class="but" href="#" @click="test(data.url2)">立即测试</a>
+                    <a v-if="!storeUser.state2" class="but" href="#" @click="test(data.url2)">立即测试</a>
                     <a v-else class="disable" @click="reminder()">已作答</a>
                 </div>
             </div>
             <div class="glass" style="--r:25;" >
                 <div class="hint">
-                    <img v-if="storeUser.state3" src="../assets/iconfont/未完成.png" />
+                    <img v-if="!storeUser.state3" src="../assets/iconfont/未完成.png" />
                     <img v-else src="../assets/iconfont/已完成.png" />
                 </div>
                 <div class="content">
                     <h2>03</h2>
                     <h3>测试3</h3>
-                    <a v-if="storeUser.state3" class="but" href="#" @click="test(data.url3)">立即测试</a>
+                    <a v-if="!storeUser.state3" class="but" href="#" @click="test(data.url3)">立即测试</a>
                     <a v-else class="disable" @click="reminder()">已作答</a>
                 </div>
             </div>
             <div class="glass" style="--r:-15;" data-text="">
                 <div class="hint">
-                    <img v-if="storeUser.state4" src="../assets/iconfont/未完成.png" />
+                    <img v-if="!storeUser.state4" src="../assets/iconfont/未完成.png" />
                     <img v-else src="../assets/iconfont/已完成.png" />
                 </div>
                 <div class="content">
                     <h2>04</h2>
                     <h3>测试4</h3>
-                    <a v-if="storeUser.state4" class="but" href="#" @click="test(data.url4)">立即测试</a>
+                    <a v-if="!storeUser.state4" class="but" href="#" @click="test(data.url4)">立即测试</a>
                     <a v-else class="disable" @click="reminder()">已作答</a>
                 </div>
             </div>
+        <el-button class="finish-btn" v-show="storeUser.state1&&storeUser.state2&&storeUser.state3&&storeUser.state4" @click="router.push('/main')">已答完，返回主页面</el-button>
         </div>
-        <div class="title"></div>
+        <div class="title">
+        </div>
     </div>
 </template>
 
@@ -350,6 +352,23 @@ defineExpose({
         line-height: 1.5;
         color: #646a73;
     }
+}
+.finish-btn{
+    position: relative;
+    top:100px;
+    width: 100%;
+    height: 60px;
+    background-color: #018E98;
+    border-radius: 10px;
+    font-size: 20px;
+    line-height: 60px;
+    color: #ffffff;
+    letter-spacing: 2px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+.finish-btn:hover{
+    opacity: 0.8;
 }
 .container{
     position: relative;

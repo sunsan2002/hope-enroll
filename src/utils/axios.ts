@@ -1,8 +1,8 @@
 /*
  * @Author: STATICHIT
  * @Date: 2023-04-26 19:13:07
- * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-12-24 23:28:40
+ * @LastEditors: sunsan 2390864551@qq.com
+ * @LastEditTime: 2023-12-25 19:41:42
  * @FilePath: \resume_analysis\src\utils\axios.js
  * @Description: 封装请求
  */
@@ -20,6 +20,21 @@ let config = {
 }
 
 const _axios = axios.create(config);
+
+let store = user();
+const storedToken = store.token;
+
+_axios.interceptors.request.use(
+  config => {
+  // 每次发送请求之前都检测vuex是否存有token，放在请求头发送给服务器// Authorization是根据后端自走义字段
+  config.headers.Authorization = storedToken;
+  return config;
+  },
+  error => {
+  console.log("在request拦截器显示错误:",error.response)
+  return Promise.reject(error);
+  }
+)
 
 // 接收请求拦截器，内部根据返回值，重新组装，统一管理。
 
@@ -39,13 +54,14 @@ const _axios = axios.create(config);
 //   return res.data//返回的是数据
 // })
 
-let store = user();
-const storedToken = store.token;
+
 const header = {
   'Content-Type': 'application/json;charset=UTF-8',
   // 'accessToken':'eyJ0eXBlIjoiSnd0IiwiYWxnIjoiSFMyNTYiLCJ0eXAiOiJKV1QifQ.eyJpZGVudGl0eSI6IkhSIiwiaWQiOiIxIiwiZXhwIjoxNzA5NTk1MTQzfQ.vUXTwTW7PxQlpQyv_RporMDZO2-XMekQlDSPel444VM',
-  'Authorization': storedToken,
+  // 'Authorization': storedToken,
 }
+
+
 
 const http = {
   get(url = '', params = {}) {

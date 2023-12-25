@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/store/user.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1702385282521,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1702385297436,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,19 @@\n+import { defineStore } from 'pinia'\r\n+import { ref } from \"vue\";\r\n+\r\n+\r\n+export default defineStore('first', {\r\n+  state: () => {\r\n+    return {\r\n+\t\t\ttoken: '',\r\n+      id:'',\r\n+      username:'',\r\n+      name:'测试用户'\r\n+\t\t};\r\n+  },\r\n+  getters: {\r\n+  },\r\n+  action: {\r\n+\r\n+  }\r\n+})\r\n"
+                },
+                {
+                    "date": 1702385304307,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,19 @@\n+import { defineStore } from 'pinia'\r\n+import { ref } from \"vue\";\r\n+\r\n+\r\n+export default defineStore('first', {\r\n+  state: () => {\r\n+    return {\r\n+\t\ttoken: '',\r\n+      id:'',\r\n+      username:'',\r\n+      name:'测试用户'\r\n+\t\t};\r\n+  },\r\n+  getters: {\r\n+  },\r\n+  action: {\r\n+\r\n+  }\r\n+})\r\n"
+                }
+            ],
+            "date": 1702385282521,
+            "name": "Commit-0",
+            "content": "import { createPinia } from 'pinia'\r\n// 引入持久化插件\r\nimport piniaPluginPersist from 'pinia-plugin-persist'\r\n\r\nconst store = createPinia()\r\n// 使用该插件\r\nstore.use(piniaPluginPersist)\r\n\r\n//导出\r\nexport default store\r\n"
+        }
+    ]
+}

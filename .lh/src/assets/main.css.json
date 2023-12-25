@@ -1,0 +1,38 @@
+{
+    "sourceFile": "src/assets/main.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1702330938655,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1702330948442,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,29 @@\n+* {\r\n+    margin: 0;\r\n+    padding: 0;\r\n+    box-sizing: border-box;\r\n+    font-family: 'Poppins', sans-serif;\r\n+}\r\n+\r\n+p{\r\n+    font-family: '黑体', SimSun, sans-serif; \r\n+}\r\n+\r\n+/* observer test style */\r\n+\r\n+/* zuo'fei */\r\n+.flag {\r\n+    opacity: 0;\r\n+    filter: blur(5px);\r\n+    transition: all 1.5s;\r\n+    /* transform: translateX(-100%); */\r\n+    transform: translateY(100%);\r\n+}\r\n+\r\n+.active {\r\n+    opacity: 1;\r\n+    filter: blur(0);\r\n+    /* transform: translateX(0);  */\r\n+    transform: translateY(0);\r\n+}\r\n+\r\n"
+                },
+                {
+                    "date": 1702330954662,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,29 @@\n+* {\r\n+    margin: 0;\r\n+    padding: 0;\r\n+    box-sizing: border-box;\r\n+    font-family: 'Poppins', sans-serif;\r\n+}\r\n+\r\n+p{\r\n+    font-family: '黑体', SimSun, sans-serif; \r\n+}\r\n+\r\n+/* observer test style */\r\n+\r\n+/* xia */\r\n+.flag {\r\n+    opacity: 0;\r\n+    filter: blur(5px);\r\n+    transition: all 1.5s;\r\n+    /* transform: translateX(-100%); */\r\n+    transform: translateY(100%);\r\n+}\r\n+\r\n+.active {\r\n+    opacity: 1;\r\n+    filter: blur(0);\r\n+    /* transform: translateX(0);  */\r\n+    transform: translateY(0);\r\n+}\r\n+\r\n"
+                },
+                {
+                    "date": 1702330960491,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,29 @@\n+* {\r\n+    margin: 0;\r\n+    padding: 0;\r\n+    box-sizing: border-box;\r\n+    font-family: 'Poppins', sans-serif;\r\n+}\r\n+\r\n+p{\r\n+    font-family: '黑体', SimSun, sans-serif; \r\n+}\r\n+\r\n+/* observer test style */\r\n+\r\n+/* 由下往上 */\r\n+.flag {\r\n+    opacity: 0;\r\n+    filter: blur(5px);\r\n+    transition: all 1.5s;\r\n+    /* transform: translateX(-100%); */\r\n+    transform: translateY(100%);\r\n+}\r\n+\r\n+.active {\r\n+    opacity: 1;\r\n+    filter: blur(0);\r\n+    /* transform: translateX(0);  */\r\n+    transform: translateY(0);\r\n+}\r\n+\r\n"
+                },
+                {
+                    "date": 1702330968095,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,5 +26,5 @@\n     /* transform: translateX(0);  */\r\n     transform: translateY(0);\r\n }\r\n \r\n-/* you */\n\\ No newline at end of file\n+/* 由左往右 */\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1702330978503,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,42 @@\n+* {\r\n+    margin: 0;\r\n+    padding: 0;\r\n+    box-sizing: border-box;\r\n+    font-family: 'Poppins', sans-serif;\r\n+}\r\n+\r\n+p{\r\n+    font-family: '黑体', SimSun, sans-serif; \r\n+}\r\n+\r\n+/* observer test style */\r\n+\r\n+/* 由下往上 */\r\n+.flag {\r\n+    opacity: 0;\r\n+    filter: blur(5px);\r\n+    transition: all 1.5s;\r\n+    /* transform: translateX(-100%); */\r\n+    transform: translateY(100%);\r\n+}\r\n+\r\n+.active {\r\n+    opacity: 1;\r\n+    filter: blur(0);\r\n+    /* transform: translateX(0);  */\r\n+    transform: translateY(0);\r\n+}\r\n+\r\n+/* 由左往右 */\r\n+.flag {\r\n+    opacity: 0;\r\n+    filter: blur(5px);\r\n+    transition: all 1.5s;\r\n+    /* transform: translateX(-100%); */\r\n+}\r\n+\r\n+.active {\r\n+    opacity: 1;\r\n+    filter: blur(0);\r\n+    /* transform: translateX(0);  */\r\n+}\r\n"
+                }
+            ],
+            "date": 1702330938655,
+            "name": "Commit-0",
+            "content": "* {\r\n    margin: 0;\r\n    padding: 0;\r\n    box-sizing: border-box;\r\n    font-family: 'Poppins', sans-serif;\r\n}\r\n\r\np{\r\n    font-family: '黑体', SimSun, sans-serif; \r\n}\r\n\r\n/* observer test style */\r\n\r\n.flag {\r\n    opacity: 0;\r\n    filter: blur(5px);\r\n    transition: all 1.5s;\r\n    /* transform: translateX(-100%); */\r\n    transform: translateY(100%);\r\n}\r\n\r\n.active {\r\n    opacity: 1;\r\n    filter: blur(0);\r\n    /* transform: translateX(0);  */\r\n    transform: translateY(0);\r\n}\r\n\r\n"
+        }
+    ]
+}

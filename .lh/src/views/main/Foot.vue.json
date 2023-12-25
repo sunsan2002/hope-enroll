@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/views/main/Foot.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1702901889299,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1702901889299,
+            "name": "Commit-0",
+            "content": "<!--\r\n * @Author: sunsan 2390864551@qq.com\r\n * @Date: 2023-11-07 21:08:17\r\n * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git\r\n * @LastEditTime: 2023-12-18 20:18:09\r\n * @FilePath: \\hopeEnroll\\hope_enroll\\src\\views\\main\\Foot.vue\r\n * @Description: 底部组件\r\n-->\r\n\r\n<template>\r\n  <div class=\"footer\">\r\n    <div class=\"wrapper\">\r\n      <div class=\"left\">\r\n        <div style=\"display: flex; flex: 1\">\r\n          <img src=\"../../assets/logo.png\" class=\"logoImg\" />\r\n          <h1 class=\"logo\">Hope实验室</h1>\r\n        </div>\r\n        <p style=\"text-align: left\">\r\n          Hope工作室创立于2007年<br />\r\n          植根于吉首大学计算机科学与工程学院，由黄伟老师创办，\r\n        </p>\r\n      </div>\r\n      <div class=\"right\">\r\n        <dl>\r\n          <dt>Hope工作室</dt>\r\n          <dd><a href=\"\">关于</a></dd>\r\n          <dd><a href=\"\">联系我们</a></dd>\r\n          <dd><a href=\"\">服务条款</a></dd>\r\n          <dd><a href=\"\">客户服务</a></dd>\r\n          <dd><a href=\"\">帮助</a></dd>\r\n        </dl>\r\n        <dl>\r\n          <dt>开发者</dt>\r\n          <dd><a href=\"\">sunsan</a></dd>\r\n          <dd><a href=\"\">Fleuxxx</a></dd>\r\n        </dl>\r\n      </div>\r\n    </div>\r\n    <div class=\"more\">\r\n      <hr />\r\n    </div>\r\n    <el-backtop :right=\"100\" :bottom=\"100\" />\r\n  </div>\r\n</template>\r\n\r\n<script setup>\r\n</script>\r\n\r\n<style lang=\"scss\" scoped>\r\n* {\r\n  text-align: left;\r\n}\r\nli {\r\n  list-style: none;\r\n}\r\nhr {\r\n  border: none;\r\n  height: 1px;\r\n  background: #3d3d3d;\r\n}\r\n.logoImg {\r\n  width: 50px;\r\n  height: 50px;\r\n  align-self: center;\r\n  margin-right: 10px;\r\n}\r\n.logo {\r\n  line-height: 50px;\r\n  color: #bbb9b9;\r\n  margin-right: 40px;\r\n}\r\na {\r\n  color: #ffffff;\r\n  text-decoration: none;\r\n}\r\n// .footer {\r\n//   padding: 70px 250px 0 250px;\r\n//   height: 380px;\r\n// }\r\n\r\n.footer .left {\r\n  float: left;\r\n}\r\n\r\n.footer .right {\r\n  float: right;\r\n}\r\n\r\n.footer .left p {\r\n  margin: 20px 0 10px;\r\n  color: rgb(185, 185, 185);\r\n  font-size: 13px;\r\n}\r\n\r\n.footer .left a {\r\n  display: block;\r\n  width: 120px;\r\n  height: 36px;\r\n  border: 1px solid #2f2fed;\r\n  text-align: center;\r\n  line-height: 36px;\r\n  font-size: 16px;\r\n  color: #2f2fed;\r\n}\r\n\r\n.footer .right dt {\r\n  font-size: 17px;\r\n  font-weight: 500;\r\n  margin-bottom: 20px;\r\n}\r\n\r\n.footer .right dl {\r\n  float: left;\r\n  margin-left: 110px;\r\n  margin-right: 20px;\r\n  font-size: 13px;\r\n  line-height: 21px;\r\n  color: #ffffff;\r\n}\r\n\r\n.more {\r\n  margin-top: 260px;\r\n}\r\n</style>"
+        }
+    ]
+}

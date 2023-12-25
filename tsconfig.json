@@ -34,7 +34,7 @@
     "src/**/*.vue",
     "tests/**/*.ts",
     "tests/**/*.tsx"
-  ],
+, "src/utils/directives.ts", "src/utils/observes.js"  ],
   "exclude": [
     "node_modules"
   ]

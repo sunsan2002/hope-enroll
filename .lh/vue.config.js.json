@@ -1,0 +1,22 @@
+{
+    "sourceFile": "vue.config.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1702993895300,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1702993902705,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,12 @@\n+/*\r\n+ * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git\r\n+ * @Date: 2023-11-08 19:09:24\r\n+ * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git\r\n+ * @LastEditTime: 2023-12-19 21:51:35\r\n+ * @FilePath: \\hope-enroll\\vue.config.js\r\n+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE\r\n+ */\r\n const { defineConfig } = require('@vue/cli-service')\r\n module.exports = defineConfig({\r\n-  publicPath: '/',\r\n-  assetsDir: 'assets',\r\n   transpileDependencies: true\r\n })\r\n"
+                }
+            ],
+            "date": 1702993895300,
+            "name": "Commit-0",
+            "content": "const { defineConfig } = require('@vue/cli-service')\r\nmodule.exports = defineConfig({\r\n  publicPath: '/',\r\n  assetsDir: 'assets',\r\n  transpileDependencies: true\r\n})\r\n"
+        }
+    ]
+}

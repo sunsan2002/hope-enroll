@@ -1,0 +1,46 @@
+{
+    "sourceFile": "src/views/Answer.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1702822329149,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1702822338979,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,42 @@\n+<template>\r\n+  <div ></div>\r\n+</template>\r\n+\r\n+<script setup>\r\n+import { ref, reactive, toRefs, onBeforeMount, onMounted, watchEffect, computed } from 'vue';\r\n+import { useStore } from 'vuex';\r\n+import { useRoute, useRouter } from 'vue-router';\r\n+/**\r\n+* 仓库\r\n+*/\r\n+const store = useStore();\r\n+/**\r\n+* 路由对象\r\n+*/\r\n+const route = useRoute();\r\n+/**\r\n+* 路由实例\r\n+*/\r\n+const router = useRouter();\r\n+//console.log('1-开始创建组件-setup')\r\n+/**\r\n+* 数据部分\r\n+*/\r\n+const data = reactive({})\r\n+onBeforeMount(() => {\r\n+  //console.log('2.组件挂载页面之前执行----onBeforeMount')\r\n+})\r\n+onMounted(() => {\r\n+  //console.log('3.-组件挂载到页面之后执行-------onMounted')\r\n+})\r\n+watchEffect(()=>{\r\n+})\r\n+// 使用toRefs解构\r\n+// let { } = { ...toRefs(data) } \r\n+defineExpose({\r\n+  ...toRefs(data)\r\n+})\r\n+\r\n+</script>\r\n+<style scoped lang='sass'>\r\n+</style>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1702888155490,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n <template>\r\n-  <div ></div>\r\n+  <div >\r\n+    \r\n+  </div>\r\n </template>\r\n \r\n <script setup>\r\n import { ref, reactive, toRefs, onBeforeMount, onMounted, watchEffect, computed } from 'vue';\r\n"
+                },
+                {
+                    "date": 1702889391218,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\r\n   <div >\r\n-    \r\n+    <el-\r\n   </div>\r\n </template>\r\n \r\n <script setup>\r\n"
+                },
+                {
+                    "date": 1702889402708,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\r\n   <div >\r\n-    <el-\r\n+    <el-button ></el-button>\r\n   </div>\r\n </template>\r\n \r\n <script setup>\r\n"
+                },
+                {
+                    "date": 1702889415344,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\r\n   <div >\r\n-    <el-button ></el-button>\r\n+    <el-button @click=\"ne\"></el-button>\r\n   </div>\r\n </template>\r\n \r\n <script setup>\r\n"
+                },
+                {
+                    "date": 1702889433698,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n <template>\r\n   <div >\r\n+    <\r\n     <el-button @click=\"next()\"></el-button>\r\n   </div>\r\n </template>\r\n \r\n"
+                },
+                {
+                    "date": 1702889914153,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n <template>\r\n   <div >\r\n     <div>\r\n-        \r\n+\r\n     </div>\r\n-    <el-button @click=\"next()\"></el-button>\r\n+    <el-button @click=\"finish()\"></el-button>\r\n   </div>\r\n </template>\r\n \r\n <script setup>\r\n"
+                }
+            ],
+            "date": 1702822329149,
+            "name": "Commit-0",
+            "content": ""
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "sourceFile": "src/utils/index.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1702387540861,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1702387548148,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,10 +23,6 @@\n   export function localRemove (key) {\r\n     window.localStorage.removeItem(key)\r\n   }\r\n \r\n-  // 单张图片上传\r\n-  export const uploadImgServer = \"http://localhost:8080/users/uploadImg\"\r\n \r\n-  //多张图片上传\r\n-  export const uploadImgsServer = \"http://localhost:8080/users/uploadImgs\"\r\n \r\n"
+                },
+                {
+                    "date": 1702387554407,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,14 +6,14 @@\n  * @FilePath: \\hopeEnroll\\hope_enroll\\src\\utils\\index.ts\r\n  * @Description: 基础配置\r\n  */\r\n export function localGet (key) {\r\n-const value = window.localStorage.getItem(key)\r\n-// console.log(value)\r\n-try {\r\n-    return JSON.parse(window.localStorage.getItem(key))\r\n-} catch (error) {\r\n-    return value\r\n+    const value = window.localStorage.getItem(key)\r\n+    // console.log(value)\r\n+    try {\r\n+        return JSON.parse(window.localStorage.getItem(key))\r\n+    } catch (error) {\r\n+        return value\r\n }\r\n }\r\n \r\n export function localSet (key, value) {\r\n"
+                }
+            ],
+            "date": 1702387540861,
+            "name": "Commit-0",
+            "content": "/*\r\n * @Author: sunsan 2390864551@qq.com\r\n * @Date: 2023-11-05 21:08:34\r\n * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git\r\n * @LastEditTime: 2023-12-12 21:25:40\r\n * @FilePath: \\hopeEnroll\\hope_enroll\\src\\utils\\index.ts\r\n * @Description: 基础配置\r\n */\r\nexport function localGet (key) {\r\n    const value = window.localStorage.getItem(key)\r\n    // console.log(value)\r\n    try {\r\n      return JSON.parse(window.localStorage.getItem(key))\r\n    } catch (error) {\r\n      return value\r\n    }\r\n  }\r\n\r\n  export function localSet (key, value) {\r\n    window.localStorage.setItem(key, JSON.stringify(value))\r\n  }\r\n\r\n  export function localRemove (key) {\r\n    window.localStorage.removeItem(key)\r\n  }\r\n\r\n  // 单张图片上传\r\n  export const uploadImgServer = \"http://localhost:8080/users/uploadImg\"\r\n\r\n  //多张图片上传\r\n  export const uploadImgsServer = \"http://localhost:8080/users/uploadImgs\"\r\n\r\n"
+        }
+    ]
+}

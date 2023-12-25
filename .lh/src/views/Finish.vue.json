@@ -1,0 +1,78 @@
+{
+    "sourceFile": "src/views/Finish.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 15,
+            "patches": [
+                {
+                    "date": 1702888629986,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1702888635512,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n <template>\r\n-  <div ></div>\r\n+  <div >\r\n+    \r\n+  </div>\r\n </template>\r\n \r\n <script setup>\r\n import { ref, reactive, toRefs, onBeforeMount, onMounted, watchEffect, computed } from 'vue';\r\n"
+                },
+                {
+                    "date": 1702888643772,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,9 @@\n <template>\r\n   <div >\r\n-    \r\n+    <div>\r\n+\r\n+    </div>\r\n   </div>\r\n </template>\r\n \r\n <script setup>\r\n"
+                },
+                {
+                    "date": 1702888650649,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n <template>\r\n-  <div >\r\n+  <div class=\"box\">\r\n     <div>\r\n \r\n     </div>\r\n   </div>\r\n"
+                },
+                {
+                    "date": 1702888665736,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\r\n   <div class=\"box\">\r\n-    <div>\r\n+    <div class=\"con\">\r\n \r\n     </div>\r\n   </div>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1702888674740,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <template>\r\n   <div class=\"box\">\r\n-    <div class=\"con\">\r\n+    <div class=\"container\">\r\n \r\n     </div>\r\n   </div>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1702888684014,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n <template>\r\n   <div class=\"box\">\r\n     <div class=\"container\">\r\n-\r\n+        <\r\n     </div>\r\n   </div>\r\n </template>\r\n \r\n"
+                },
+                {
+                    "date": 1702888690907,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,10 @@\n <template>\r\n   <div class=\"box\">\r\n     <div class=\"container\">\r\n-        <\r\n+        <div>\r\n+            \r\n+        </div>\r\n     </div>\r\n   </div>\r\n </template>\r\n \r\n"
+                },
+                {
+                    "date": 1702888701132,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n   <div class=\"box\">\r\n     <div class=\"container\">\r\n-        <div>\r\n-            \r\n+        <div class=\"info\">\r\n+\r\n         </div>\r\n     </div>\r\n   </div>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1702888707049,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n     <div class=\"container\">\r\n         <div class=\"info\">\r\n \r\n         </div>\r\n+        <div></div>\r\n     </div>\r\n   </div>\r\n </template>\r\n \r\n"
+                },
+                {
+                    "date": 1702888715371,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,11 @@\n     <div class=\"container\">\r\n         <div class=\"info\">\r\n \r\n         </div>\r\n-        <div></div>\r\n+        <div>\r\n+            <h1>感谢您的作答</h1>\r\n+        </div>\r\n     </div>\r\n   </div>\r\n </template>\r\n \r\n"
+                },
+                {
+                    "date": 1702888723257,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,11 @@\n         </div>\r\n         <div>\r\n             <h1>感谢您的作答</h1>\r\n         </div>\r\n+        <div>\r\n+            \r\n+        </div>\r\n     </div>\r\n   </div>\r\n </template>\r\n \r\n"
+                },
+                {
+                    "date": 1702888729619,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n         <div>\r\n             <h1>感谢您的作答</h1>\r\n         </div>\r\n         <div>\r\n-            \r\n+            <el\r\n         </div>\r\n     </div>\r\n   </div>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1702888740718,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n         <div>\r\n             <h1>感谢您的作答</h1>\r\n         </div>\r\n         <div>\r\n-            <el\r\n+            <el-button>退出考试</el-button>\r\n         </div>\r\n     </div>\r\n   </div>\r\n </template>\r\n"
+                },
+                {
+                    "date": 1702888751872,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n <template>\r\n   <div class=\"box\">\r\n     <div class=\"container\">\r\n         <div class=\"info\">\r\n-            <p>\r\n+            <p></p>\r\n         </div>\r\n         <div>\r\n             <h1>感谢您的作答</h1>\r\n         </div>\r\n"
+                },
+                {
+                    "date": 1702888757749,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,54 @@\n+<template>\r\n+  <div class=\"box\">\r\n+    <div class=\"container\">\r\n+        <div class=\"info\">\r\n+            <p>k</p>\r\n+        </div>\r\n+        <div>\r\n+            <h1>感谢您的作答</h1>\r\n+        </div>\r\n+        <div>\r\n+            <el-button>退出考试</el-button>\r\n+        </div>\r\n+    </div>\r\n+  </div>\r\n+</template>\r\n+\r\n+<script setup>\r\n+import { ref, reactive, toRefs, onBeforeMount, onMounted, watchEffect, computed } from 'vue';\r\n+import { useStore } from 'vuex';\r\n+import { useRoute, useRouter } from 'vue-router';\r\n+/**\r\n+* 仓库\r\n+*/\r\n+const store = useStore();\r\n+/**\r\n+* 路由对象\r\n+*/\r\n+const route = useRoute();\r\n+/**\r\n+* 路由实例\r\n+*/\r\n+const router = useRouter();\r\n+//console.log('1-开始创建组件-setup')\r\n+/**\r\n+* 数据部分\r\n+*/\r\n+const data = reactive({})\r\n+onBeforeMount(() => {\r\n+  //console.log('2.组件挂载页面之前执行----onBeforeMount')\r\n+})\r\n+onMounted(() => {\r\n+  //console.log('3.-组件挂载到页面之后执行-------onMounted')\r\n+})\r\n+watchEffect(()=>{\r\n+})\r\n+// 使用toRefs解构\r\n+// let { } = { ...toRefs(data) } \r\n+defineExpose({\r\n+  ...toRefs(data)\r\n+})\r\n+\r\n+</script>\r\n+<style scoped lang='less'>\r\n+</style>\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1702888629986,
+            "name": "Commit-0",
+            "content": "<template>\r\n  <div ></div>\r\n</template>\r\n\r\n<script setup>\r\nimport { ref, reactive, toRefs, onBeforeMount, onMounted, watchEffect, computed } from 'vue';\r\nimport { useStore } from 'vuex';\r\nimport { useRoute, useRouter } from 'vue-router';\r\n/**\r\n* 仓库\r\n*/\r\nconst store = useStore();\r\n/**\r\n* 路由对象\r\n*/\r\nconst route = useRoute();\r\n/**\r\n* 路由实例\r\n*/\r\nconst router = useRouter();\r\n//console.log('1-开始创建组件-setup')\r\n/**\r\n* 数据部分\r\n*/\r\nconst data = reactive({})\r\nonBeforeMount(() => {\r\n  //console.log('2.组件挂载页面之前执行----onBeforeMount')\r\n})\r\nonMounted(() => {\r\n  //console.log('3.-组件挂载到页面之后执行-------onMounted')\r\n})\r\nwatchEffect(()=>{\r\n})\r\n// 使用toRefs解构\r\n// let { } = { ...toRefs(data) } \r\ndefineExpose({\r\n  ...toRefs(data)\r\n})\r\n\r\n</script>\r\n<style scoped lang='less'>\r\n</style>"
+        }
+    ]
+}

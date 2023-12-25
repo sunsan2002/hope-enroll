@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/utils/TimerTpChange.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1702242843173,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1702242843173,
+            "name": "Commit-0",
+            "content": "import { ref } from \"vue\";\r\n\r\nexport default function () {\r\n  var backtp = ref(0);\r\n\r\n  setInterval(() => {\r\n    backtp.value = (backtp.value + 1) % 2;\r\n  }, 8000);\r\n\r\n  return backtp;\r\n}\r\n"
+        }
+    ]
+}

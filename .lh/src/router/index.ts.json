@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 22,
+            "activePatchIndex": 23,
             "patches": [
                 {
                     "date": 1702244835331,
@@ -96,6 +96,10 @@
                 {
                     "date": 1702889361703,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n         component: () => import('../views/Option.vue')\r\n       },\r\n       {\r\n         path:'/main/answer',\r\n-        component: () => import('../views/Finish.vue')\r\n+        component: () => import('../views/Answer.vue')\r\n       },\r\n       {\r\n         path:'/main/finish',\r\n         component: () => import('../views/Finish.vue')\r\n"
+                },
+                {
+                    "date": 1703514749016,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,76 @@\n+/*\r\n+ * @Author: sunsan 2390864551@qq.com\r\n+ * @Date: 2023-11-05 20:50:59\r\n+ * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git\r\n+ * @LastEditTime: 2023-12-18 16:49:13\r\n+ * @FilePath: \\hopeEnroll\\hope_enroll\\src\\router\\index.ts\r\n+ * @Description: 路由配置\r\n+ */\r\n+import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'\r\n+\r\n+const routes: Array<RouteRecordRaw> = [\r\n+  { path: '/', redirect: '/main' },\r\n+  {\r\n+    path: '/login',\r\n+    component: () => import('../views/Login.vue')\r\n+  },\r\n+  {\r\n+    path: '/main',\r\n+    component: () => import('../views/Home.vue'),\r\n+    children: [\r\n+      {\r\n+        path: '', // 空路径，即默认显示的子路由\r\n+        component: () => import('../views/main/Body.vue'),\r\n+        children: [{\r\n+            path: \"/main/project\",\r\n+            component: () => import(\"../views/main/Xm.vue\")\r\n+          },{\r\n+            path: \"/main/in\",\r\n+            component: () => import(\"../views/In.vue\")\r\n+          },\r\n+        ]\r\n+      },\r\n+      {\r\n+        path:'/main/in',\r\n+        component: () => import('../views/Introduction.vue')\r\n+        // component: () => import(\"../views/main/Xm.vue\")\r\n+      },\r\n+      {\r\n+        path:'/main/option',\r\n+        component: () => import('../views/Option.vue')\r\n+      },\r\n+      {\r\n+        path:'/main/answer',\r\n+        component: () => import('../views/Answer.vue')\r\n+      },\r\n+      {\r\n+        path:'/main/finish',\r\n+        component: () => import('../views/Finish.vue')\r\n+      }\r\n+    ]\r\n+  },\r\n+]\r\n+\r\n+\r\n+const router = createRouter({\r\n+  history: createWebHistory(process.env.BASE_URL),\r\n+  routes\r\n+})\r\n+\r\n+// router.beforeEach((to, from, next) => {\r\n+  // if (to.path == '/login') {\r\n+  //   // 如果路径是 /login 则正常执行\r\n+  //   next()\r\n+  // } else {\r\n+  //   // 如果不是 /login，判断是否有 token\r\n+  //   if (!localStorage.getItem('token')) {\r\n+  //     // 如果没有，则跳至登录页面\r\n+  //     next({ path: '/login' })\r\n+  //   } else {\r\n+  //     // 否则继续执行\r\n+  // }\r\n+  // }\r\n+// })\r\n+\r\n+\r\n+export default router\r\n"
                 }
             ],
             "date": 1702244835331,

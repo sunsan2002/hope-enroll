@@ -120,7 +120,8 @@ const test  = (url: string) =>{
     console.log(number);
     setTimeout(() => {
         loading.close()
-        router.push({ path: "/main/answer", query: { num: number }}); 
+        storeUser.curnum = number;
+        router.push({ path: "/main/answer"}); 
     }, 200   )
 }
 
@@ -132,6 +133,8 @@ const clearProblem = () =>{
     store.questions.length = 0;
     store.options.length = 0;
     store.ans.length = 0;
+    store.percentage = 0;
+    store.curstate=0;
 }
 
 //加入心里测试
@@ -143,8 +146,8 @@ const infoProblem = async (url:any) => {
         const wb = XLSX.read(data, { type: 'array' });
         const sheets = wb.Sheets;
         content.value = transformSheets(sheets);
-        console.log(content)
-        console.log(content.value.length)
+        // console.log(content)
+        // console.log(content.value.length)
         if(url==='/1.xlsx'){
             text1(content);
         }else if(url==='/2.xlsx'){
@@ -169,7 +172,7 @@ const text1 = (content:any) =>{
             if (str.includes(':')) {//去掉冒号
                 str = str.replace(/:/g, '');
             }
-            console.log(num+'、'+ str);
+            // console.log(num+'、'+ str);
             store.setQuestion({
                 number: num,
                 text: str,
@@ -197,7 +200,7 @@ const text2 = (content:any) =>{
             if (str.includes(':')) {//去掉冒号
                 str = str.replace(/:/g, '');
             }
-            console.log(num+'、'+ str);
+            // console.log(num+'、'+ str);
             store.setQuestion({
                 number: num,
                 text: str,
@@ -217,7 +220,7 @@ const text3 = (content:any) =>{
         if(typeof content.value[i][0] === 'string'){
             if(content.value[i][0][0]==='一' || content.value[i][0][0]==='三'){
                 let str = content.value[i][0]; //小标题
-                console.log("小标题:"+str);
+                // console.log("小标题:"+str);
                 store.setTitle(str);
                 flag=0;
             }else if(content.value[i][0][0]==='二' || content.value[i][0][0]==='四'){
@@ -269,7 +272,7 @@ const text3 = (content:any) =>{
                 });
                 const matches = res.match(/([A-Z]、[^A-Z]*)/g); //存数组
                 store.setOptions(matches || []);
-                console.log(matches);
+                // console.log(matches);
             }
         }
        
@@ -280,8 +283,8 @@ const text4 = (content:any) =>{
     for(let i=1; i<content.value.length; i++){
         //题目
         let isFirstCharNumeric = !isNaN(parseInt(content.value[i][0][0]));
-        console.log(isFirstCharNumeric);
-        console.log(i);
+        // console.log(isFirstCharNumeric);
+        // console.log(i);
         if(isFirstCharNumeric){
             let s = content.value[i][0];
             let index = s.indexOf("．");  // 查找点的位置
@@ -297,7 +300,7 @@ const text4 = (content:any) =>{
                 let str = content.value[i][0]; //选项
                 let matches = str.match(/([A-D])．(.*?)\s*(?=[A-D]．|$)/g); //存数组
                 store.setOptions(matches || []);
-                console.log(matches)
+                // console.log(matches)
                 
             }
         }    

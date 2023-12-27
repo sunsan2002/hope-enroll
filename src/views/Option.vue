@@ -14,8 +14,8 @@
                 <div class="content">
                 <h2>01</h2>
                 <h3>测试1</h3>
-                <a v-if="!storeUser.state1" class="but" @click="test(data.url1)">立即测试</a>
-                <a v-else class="disable" @click="reminder()">已作答</a>
+                <button v-if="!storeUser.state1" class="but" @click="test(data.url1)">立即测试</button>
+                <button v-else class="disable" @click="reminder()">已作答</button>
             </div>
             </div>
             <div class="glass" style="--r:5;" >
@@ -26,8 +26,8 @@
                 <div class="content">
                     <h2>02</h2>
                     <h3>测试2</h3>
-                    <a v-if="!storeUser.state2" class="but" href="#" @click="test(data.url2)">立即测试</a>
-                    <a v-else class="disable" @click="reminder()">已作答</a>
+                    <button v-if="!storeUser.state2" class="but" href="#" @click="test(data.url2)">立即测试</button>
+                    <button v-else class="disable" @click="reminder()">已作答</button>
                 </div>
             </div>
             <div class="glass" style="--r:25;" >
@@ -38,8 +38,8 @@
                 <div class="content">
                     <h2>03</h2>
                     <h3>测试3</h3>
-                    <a v-if="!storeUser.state3" class="but" href="#" @click="test(data.url3)">立即测试</a>
-                    <a v-else class="disable" @click="reminder()">已作答</a>
+                    <button v-if="!storeUser.state3" class="but" href="#" @click="test(data.url3)">立即测试</button>
+                    <button v-else class="disable" @click="reminder()">已作答</button>
                 </div>
             </div>
             <div class="glass" style="--r:-15;" data-text="">
@@ -50,8 +50,8 @@
                 <div class="content">
                     <h2>04</h2>
                     <h3>测试4</h3>
-                    <a v-if="!storeUser.state4" class="but" href="#" @click="test(data.url4)">立即测试</a>
-                    <a v-else class="disable" @click="reminder()">已作答</a>
+                    <button v-if="!storeUser.state4" class="but" href="#" @click="test(data.url4)">立即测试</button>
+                    <button v-else class="disable" @click="reminder()">已作答</button>
                 </div>
             </div>
         <el-button class="finish-btn" v-show="storeUser.state1&&storeUser.state2&&storeUser.state3&&storeUser.state4" @click="router.push('/main')">已答完，返回主页面</el-button>
@@ -117,7 +117,6 @@ const test  = (url: string) =>{
         background: 'rgba(0, 0, 0, 0.7)',
     })
     let number:number = parseInt(url.charAt(1));
-    console.log(number);
     setTimeout(() => {
         loading.close()
         storeUser.curnum = number;
@@ -140,14 +139,12 @@ const clearProblem = () =>{
 //加入心里测试
 const infoProblem = async (url:any) => {
     try {
-        console.log("这是套题："+url);
         const res = await axios.get(url, { responseType: 'arraybuffer' });
         const data = new Uint8Array(res.data);
         const wb = XLSX.read(data, { type: 'array' });
         const sheets = wb.Sheets;
         content.value = transformSheets(sheets);
-        // console.log(content)
-        // console.log(content.value.length)
+
         if(url==='/1.xlsx'){
             text1(content);
         }else if(url==='/2.xlsx'){
@@ -172,7 +169,6 @@ const text1 = (content:any) =>{
             if (str.includes(':')) {//去掉冒号
                 str = str.replace(/:/g, '');
             }
-            // console.log(num+'、'+ str);
             store.setQuestion({
                 number: num,
                 text: str,
@@ -180,7 +176,7 @@ const text1 = (content:any) =>{
         }else if(typeof content.value[i][0] === 'string'){
             if(content.value[i][0][0]==='第'){
                 let str = content.value[i][0]; //小标题
-                // console.log(str);
+
                 store.setTitle(str);
             }else if(content.value[i][0][0]==='A'){
                 let str = content.value[i][0]; //选项
@@ -200,7 +196,6 @@ const text2 = (content:any) =>{
             if (str.includes(':')) {//去掉冒号
                 str = str.replace(/:/g, '');
             }
-            // console.log(num+'、'+ str);
             store.setQuestion({
                 number: num,
                 text: str,
@@ -220,12 +215,10 @@ const text3 = (content:any) =>{
         if(typeof content.value[i][0] === 'string'){
             if(content.value[i][0][0]==='一' || content.value[i][0][0]==='三'){
                 let str = content.value[i][0]; //小标题
-                // console.log("小标题:"+str);
                 store.setTitle(str);
                 flag=0;
             }else if(content.value[i][0][0]==='二' || content.value[i][0][0]==='四'){
                 let str = content.value[i][0]; //小标题
-                // console.log("小标题:"+str);
                 store.setTitle(str);
                 flag=1;
             }
@@ -237,7 +230,6 @@ const text3 = (content:any) =>{
                 let indexA = str.indexOf('A');
                 let result1 = str.substring(0, indexA);
                 let result2 = str.substring(indexA);
-                // console.log(num+'、'+ result1);
                 //题目
                 store.setQuestion({
                     number: num,
@@ -249,7 +241,6 @@ const text3 = (content:any) =>{
                     return match.replace(/([A-Z])/g, '$1、');
                 });
                 let matches = res.match(/([A-Z]、[^A-Z]*)/g); //存数组
-                // console.log(matches);
                 store.setOptions(matches || []);
             }
 
@@ -272,7 +263,6 @@ const text3 = (content:any) =>{
                 });
                 const matches = res.match(/([A-Z]、[^A-Z]*)/g); //存数组
                 store.setOptions(matches || []);
-                // console.log(matches);
             }
         }
        
@@ -283,14 +273,11 @@ const text4 = (content:any) =>{
     for(let i=1; i<content.value.length; i++){
         //题目
         let isFirstCharNumeric = !isNaN(parseInt(content.value[i][0][0]));
-        // console.log(isFirstCharNumeric);
-        // console.log(i);
         if(isFirstCharNumeric){
             let s = content.value[i][0];
             let index = s.indexOf("．");  // 查找点的位置
             let num = s.substring(0, index); //题目编号
             let str =  s.substring(index + 1); //题干
-            // console.log(num+'、'+ str);
             store.setQuestion({
                 number: num,
                 text: str,
@@ -300,20 +287,13 @@ const text4 = (content:any) =>{
                 let str = content.value[i][0]; //选项
                 let matches = str.match(/([A-D])．(.*?)\s*(?=[A-D]．|$)/g); //存数组
                 store.setOptions(matches || []);
-                // console.log(matches)
                 
             }
         }    
     }
 }
 
-onBeforeMount(() => {
-  //console.log('2.组件挂载页面之前执行----onBeforeMount')
-})
-onMounted(() => {
-    console.log(store.name);
-    console.log(store.titles);
-})
+
 watchEffect(()=>{
 })
 // 使用toRefs解构
@@ -328,6 +308,9 @@ defineExpose({
 .box{
     height: 100%;
     // background-color: rgb(170, 159, 159);
+}
+button{
+    border: none;
 }
 .title{
     position: relative;
@@ -358,9 +341,9 @@ defineExpose({
 }
 .finish-btn{
     position: relative;
-    top:100px;
     width: 100%;
     height: 60px;
+    margin-top: 10%;
     background-color: #018E98;
     border-radius: 10px;
     font-size: 20px;
@@ -372,6 +355,12 @@ defineExpose({
 }
 .finish-btn:hover{
     opacity: 0.8;
+}
+.el-table .el-table__row {
+  background-color: #ffffff;
+}
+.el-table{
+    background-color: #f0f0f0;
 }
 .container{
     position: relative;

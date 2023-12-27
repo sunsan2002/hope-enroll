@@ -115,16 +115,17 @@ const submit = () =>{
             emptyCount++;
         }
     }
-    if(emptyCount===0){
+    let cnt = 0;
+    if(store.ans.length<store.questions.length){
+        cnt = store.questions.length-store.ans.length;
+        data.amount = emptyCount+cnt;
+    }else{
+        data.amount = emptyCount;
+    }
+    if(emptyCount===0 && cnt===0){
         data.submitState = true;
     }else{
         // console.log(store.questions.length+"                    "+store.ans.length)
-        if(store.ans.length<store.questions.length){
-            let cnt = store.questions.length-store.ans.length;
-            data.amount = emptyCount+cnt;
-        }else{
-            data.amount = emptyCount;
-        }
         data.submitState = false;
     }
     centerDialogVisible.value = true;
@@ -156,7 +157,7 @@ const finish = () =>{
                 storeUser.state4 = true;
             }
             storeUser.curtime = getCurrentTime();
-            router.push({ path: "/main/finish"}); 
+            router.replace({ path: "/main/finish"}); 
         }
     }).catch((err: any)=>{
       console.log(err);
@@ -167,7 +168,6 @@ const finish = () =>{
 const increase = () => {
     if(data.len-1<=data.curnum){
         let now = data.curnum+1;
-        // console.log("第"+now+"题的选项是:"+radio.value);
         conversion(radio.value,now);
         submit();
         ElNotification({
@@ -176,10 +176,9 @@ const increase = () => {
         })
     }else{
         let next = data.curnum+1;
-        // console.log("(下一个)题目序号:"+next+" 当前："+store.curstate)
+
         reversal(next);
         data.curnum+=1;
-        // console.log("当前题目编号:"+data.curnum);
         saveOpion();
     }
     store.curstate = 1;

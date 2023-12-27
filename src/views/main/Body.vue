@@ -1,8 +1,8 @@
 <!--
  * @Author: sunsan 2390864551@qq.com
  * @Date: 2023-11-07 21:08:15
- * @LastEditors: Fleurxxx 984209872@qq.com
- * @LastEditTime: 2023-12-26 22:02:26
+ * @LastEditors: sunsan 2390864551@qq.com
+ * @LastEditTime: 2023-12-27 14:58:45
  * @FilePath: \hopeEnroll\hope_enroll\src\views\main\Body.vue
  * @Description: 介绍实验室（引导页）
 -->
@@ -199,15 +199,15 @@ const { text, leaf, hill1, hill4, hill5 } = toRefs({
 const employmentData = ref([
   { frontTitle: '阿里巴巴', backTitle: '伍孝林', image: require("../../assets/logo/阿里巴巴.png") },
   { frontTitle: '百度', backTitle: '李钢', image: require("../../assets/logo/百度.png") },
-  { frontTitle: '腾讯', backTitle: '李薇丽、阳汝招 李宇杰、覃会江 刘彩云', image: require("../../assets/logo/腾讯.png")},
+  { frontTitle: '腾讯', backTitle: '李薇丽、阳汝昭 李宇杰、覃会江 刘彩云', image: require("../../assets/logo/腾讯.png")},
   { frontTitle: '字节跳动', backTitle: '黄鹏、刘继强 刘毅、朱炳坤', image: require("../../assets/logo/字节跳动.png") },
   { frontTitle: '声网', backTitle: '胡炬、罗汝', image: require("../../assets/logo/声网.png")},
   { frontTitle: '滴滴', backTitle: '唐奇', image: require("../../assets/logo/滴滴.png")},
-  { frontTitle: '美团', backTitle: '黄乙轩', image: require("../../assets/logo/美团.png")},
+  { frontTitle: '美团', backTitle: '黄乙轩', image: require("../../assets/logo/美团.jpg")},
   { frontTitle: '水滴', backTitle: '刘菲', image: require("../../assets/logo/水滴.png")},
-  { frontTitle: '去哪儿', backTitle: '蒋提', image: require("../../assets/logo/去哪儿.png")},
-  { frontTitle: '水滴', backTitle: '周扬', image: require("../../assets/logo/云账户.png")},
-  { frontTitle: '神策数据', backTitle: '邓志远、周龙波', image: require("../../assets/logo/神策数据.png") },
+  { frontTitle: '去哪儿', backTitle: '蒋缇', image: require("../../assets/logo/去哪儿.png")},
+  { frontTitle: '水滴', backTitle: '周杨', image: require("../../assets/logo/云账户.png")},
+  { frontTitle: '网易', backTitle: '杨腾宇', image: require("../../assets/logo/网易.jpg") },
   { frontTitle: '达达集团', backTitle: '李锐', image: require("../../assets/logo/达达集团.png")},
 ]);
 
@@ -343,13 +343,18 @@ body {
 }
 .content1{
     position: relative;
-    justify-content: center;
-    align-items: center;
     height:calc(100vh - 47px);
     overflow: hidden;
     .wrap{
         position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         z-index: 1;
+        width: 80%; /* 适当调整宽度百分比 */
+        max-width: 1200px; /* 添加最大宽度，防止在大屏幕上过宽 */
+        margin: 0 auto; /* 居中 */
     }
     .parallax img {
         position: absolute;
@@ -357,13 +362,21 @@ body {
         left: 0;
         width: 100%;
         height: 100%;
+        object-fit: cover;
         pointer-events: none;
     }
     .sign{
         position: absolute;
-        left: 50%;
         top: 88vh;
+        left: 50%;
         transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+    #more-arrows {
+        cursor: pointer;
     }
 }
 
@@ -413,8 +426,8 @@ polygon {
 
 .title{
     position: absolute;
-    top: 230px;
-    left: 32%;
+    top: 250px;
+    // left: 29%;
     font-size: 105px;
     letter-spacing:1.5px;
     font-weight: 700;
@@ -423,7 +436,7 @@ polygon {
 .button{
     position: absolute;
     left: 50%;
-    top: 500px;
+    top: 600px;
     background: #eeeeee;
     width: 15%;
     height: 45px;
@@ -527,11 +540,16 @@ polygon {
         .layout-col{
             margin-bottom:50px;
             transform: translate(10%);
+            
         }
         .flipbox{
             position: relative;
             width:200px;
             height:200px;
+            // display: flex;
+            // flex-direction: column;
+            // justify-content: center;
+            // align-items: center;
             cursor: pointer;
             .card{
                 position:absolute;
@@ -555,6 +573,7 @@ polygon {
             }
             .back{
                 transform: rotateY(180deg);
+                text-align: center;
             }
             &:hover .front{
                 transform: rotateY(-180deg);
@@ -597,7 +616,7 @@ polygon {
     
     .circular-box{
         margin-top:200px;
-        margin-left: 10%;
+        margin-left: 5%;
         margin-right: 10%;
         h1{
             display: flex;
@@ -606,15 +625,22 @@ polygon {
         }
     }
     .circular-title{
-        margin-left: -80px;
+        // margin-left: -80px;
         padding-top: 40px;
     }
     .layout-col{
             margin-bottom:60px;
             transform: translate(10%);
+            display: flex;
+            flex-direction: column;
+            // justify-content: center;
+            align-items: center;
         }
         .flipbox{
             position: relative;
+            // display: flex;
+            // flex-direction: column;
+            // justify-content: center;
             width:200px;
             height:200px;
             cursor: pointer;

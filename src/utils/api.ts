@@ -1,8 +1,8 @@
 /*
  * @Author: sunsan 2390864551@qq.com
  * @Date: 2023-11-05 20:51:58
- * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-12-24 21:02:58
+ * @LastEditors: sunsan 2390864551@qq.com
+ * @LastEditTime: 2023-12-27 15:32:20
  * @FilePath: \hopeEnroll\hope_enroll\src\utils\api.ts
  * @Description: 封装接口
  */
@@ -24,15 +24,12 @@ interface ApiFun {
 const apiFun: ApiFun = {
   user: {
     login: (params) => {
-      console.log("发请求咯")
       return http.post(`/login?username=${params.username}&password=${params.password}`);
     },
     getUser: () => {
       return http.get(`/getUser`);
     },
     submit: (params) => {
-      console.log("要存的信息:")
-      console.log(params);
       return http.put('/user/update',params);
     },
   },

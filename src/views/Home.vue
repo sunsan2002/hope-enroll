@@ -37,7 +37,6 @@
     },
   };
 
-  console.log("Home.vue");
   </script>
   
   <style scoped>

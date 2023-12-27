@@ -9,7 +9,7 @@
 
 <template>
   <header>
-    <div class="logoCom">
+    <div class="logoCom" @click="router.push('/main')">
       <img src="../../assets/logo.png" alt="logo" class="logoImg" />
       <div class="logo">Hope实验室</div>
     </div>
@@ -26,6 +26,7 @@ import { ClickOutside } from 'element-plus';
 import { ref, reactive, computed, watch, onMounted,watchEffect, toRefs } from 'vue';
 import Login from '../Login.vue'
 import { user } from '../../store/user';
+import router from '../../router';
 
 const store = user();
 
@@ -34,7 +35,6 @@ const store = user();
 const open = ref()
 
 function clickLogin(){
-  console.log("??????")
   open.value.change();
 }
 </script>

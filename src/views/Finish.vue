@@ -51,7 +51,6 @@ function getCurrentTime() {
 
 // 示例用法
 const currentTime = getCurrentTime();
-console.log(currentTime);
 
 
 onBeforeMount(() => {
@@ -78,7 +77,7 @@ defineExpose({
     margin-top:7%;
     margin-bottom:9%;
     height: 60vh;
-    background-color: rgba(98, 98, 98, 0.177);
+    // background-color: rgba(98, 98, 98, 0.177);
     display: grid;
     place-items: center;
 }
@@ -96,12 +95,14 @@ defineExpose({
     }
   }
   .table{
-    margin-top: 40vh;
+    margin-top: 45vh;
+    margin-left: 5%;
+    background-color: #f6f6f6;
   }
 }
 .finish-btn{
     position: relative;
-    top: 99%;
+    top: 100%;
     width: 100%;
     height: 60px;
     background-color: #018E98;

@@ -1,8 +1,8 @@
 <!--
  * @Author: sunsan 2390864551@qq.com
  * @Date: 2023-11-07 20:46:44
- * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-12-24 22:35:39
+ * @LastEditors: sunsan 2390864551@qq.com
+ * @LastEditTime: 2023-12-27 15:29:50
  * @FilePath: \hopeEnroll\hope_enroll\src\views\Login.vue
  * @Description: 登录页面
 -->
@@ -51,13 +51,13 @@ function change(){
 }
 
 function login(){
-  console.log(form)
+
   apiFun.user.login({
       username: form.username,
       password: form.password,
     })
     .then((res: any) => {
-      console.log(res);
+
       //解析token
       // const decode = jwtDecode(token);
       // console.log("token解析内容", decode); //decode是一个对象
@@ -72,11 +72,10 @@ function login(){
         store.state3 = res.msg.state3;
         store.state4 = res.msg.state4;
         store.state = true;
-        localSet("token",res.msg.token);
+        sessionStorage.setItem("token",res.msg.token);
         ElMessage.success("登录成功");
         router.push({ path: "/main" });
       }else{
-        console.log(res.message)
         ElMessage.error("登录失败");
       }
     }).catch((err: any)=>{

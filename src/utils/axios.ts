@@ -1,8 +1,8 @@
 /*
  * @Author: STATICHIT
  * @Date: 2023-04-26 19:13:07
- * @LastEditors: Fleurxxx 984209872@qq.com
- * @LastEditTime: 2023-12-26 22:18:36
+ * @LastEditors: sunsan 2390864551@qq.com
+ * @LastEditTime: 2023-12-27 15:32:09
  * @FilePath: \resume_analysis\src\utils\axios.js
  * @Description: 封装请求
  */
@@ -101,7 +101,6 @@ const http = {
         headers: header,
         method: 'PUT'
       }).then(res => {
-        console.log("token:"+storedToken);
         resolve(res.data)
         return res.data
       }).catch(error => {

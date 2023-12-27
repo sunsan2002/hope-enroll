@@ -68,7 +68,7 @@ header {
   flex-direction: row;
   margin-left:20px;
   padding: 10px;
-  cursor: pointer;
+  
 }
 .right{
   margin-right:20px;

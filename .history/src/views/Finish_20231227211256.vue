@@ -6,12 +6,13 @@
             <img src="../assets/iconfont/采集成功.png" />
             <h1>感谢您的作答!</h1>
           </div>
-          <el-table :data="tableData" stripe class="table" style="width: 100%">
+          <el-table :data="data.tableData" stripe class="table" style="width: 100%">
             <el-table-column prop="name" label="作答人" width="280" />
             <el-table-column prop="date" label="交卷时间" width="280" />
           </el-table>
+          <!-- <el-button class="finish-btn"  @click="router.push('/main/option')">已答完，返回主页面</el-button> -->
         </div>
-        <el-button class="finish-btn"  @click="router.push('/main')">已答完，返回主页面</el-button>
+        <el-button class="finish-btn"  @click="router.push('/main/option')">已答完，返回主页面</el-button>
     </div>
   </div>
 </template>

@@ -10,13 +10,14 @@
             <el-table-column prop="name" label="作答人" width="280" />
             <el-table-column prop="date" label="交卷时间" width="280" />
           </el-table>
+          <!-- <el-button class="finish-btn"  @click="router.push('/main/option')">已答完，返回主页面</el-button> -->
         </div>
-        <el-button class="finish-btn"  @click="router.push('/main')">已答完，返回主页面</el-button>
+        <el-button class="finish-btn"  @click="router.push('/main/option')">已答完，返回主页面</el-button>
     </div>
   </div>
 </template>
 
-<script lang="ts" setup>
+<script setup>
 import { ref, reactive, toRefs, onBeforeMount, onMounted, watchEffect, computed } from 'vue';
 import { user } from '../store/user';
 import { useRoute, useRouter } from 'vue-router';
@@ -35,6 +36,21 @@ const tableData = [
     name: storeUser.username,
   }
 ]
+
+function getCurrentTime() {
+  const currentDate = new Date();
+  const year = currentDate.getFullYear();
+  const month = (currentDate.getMonth() + 1).toString().padStart(2, '0'); // Month is zero-based
+  const day = currentDate.getDate().toString().padStart(2, '0');
+  const hours = currentDate.getHours().toString().padStart(2, '0');
+  const minutes = currentDate.getMinutes().toString().padStart(2, '0');
+  const seconds = currentDate.getSeconds().toString().padStart(2, '0');
+  const currentTimeString = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+  return currentTimeString;
+}
+
+// 示例用法
+store. currentTime = getCurrentTime();
 
 
 onBeforeMount(() => {

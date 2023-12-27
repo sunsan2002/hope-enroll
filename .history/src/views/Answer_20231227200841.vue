@@ -95,7 +95,7 @@ let percentage = ref<number>(store.percentage);
 let duration = computed(() => Math.floor(percentage.value / 10));
 const format = (percentage: number) => (percentage === 100 ? '100%' : `${Math.floor(percentage)}%`);
 
-const getCurrentTime = () => {
+const getCurrentTime = () {
   const currentDate = new Date();
   const year = currentDate.getFullYear();
   const month = (currentDate.getMonth() + 1).toString().padStart(2, '0'); // Month is zero-based
@@ -107,7 +107,7 @@ const getCurrentTime = () => {
   return currentTimeString;
 }
 
-const submit = () =>{
+const submit = (){
     let emptyCount = 0;
     for (let i = 0; i < store.ans.length; i++) {
         // 使用条件判断检查数组元素是否为空值
@@ -138,8 +138,7 @@ const finish = () =>{
         answer += store.ans[i].text;
     }
     let number: number = storeUser.curnum;
-    // router.replace({ path: "/main/finish"});  
-    console.log("当前是第"+number+"套题")
+    // console.log("当前是第"+number+"套题")
     apiFun.user.submit({
         select: number,
         answer: answer,
@@ -157,13 +156,8 @@ const finish = () =>{
             }else if(number===4){
                 storeUser.state4 = true;
             }
-            let currentTimeString = getCurrentTime();
-            storeUser.curtime = currentTimeString;
-            if(storeUser.state1===true && storeUser.state2===true && storeUser.state3===true && storeUser.state4===true){
-                router.replace({ path: "/main/finish"});  
-            }else{
-                router.replace({ path: "/main/option"});  
-            }
+            storeUser.curtime = getCurrentTime();
+            router.replace({ path: "/main/finish"}); 
         }
     }).catch((err: any)=>{
       console.log(err);

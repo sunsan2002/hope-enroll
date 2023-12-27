@@ -95,7 +95,7 @@ let percentage = ref<number>(store.percentage);
 let duration = computed(() => Math.floor(percentage.value / 10));
 const format = (percentage: number) => (percentage === 100 ? '100%' : `${Math.floor(percentage)}%`);
 
-const getCurrentTime = () => {
+function getCurrentTime() {
   const currentDate = new Date();
   const year = currentDate.getFullYear();
   const month = (currentDate.getMonth() + 1).toString().padStart(2, '0'); // Month is zero-based
@@ -115,17 +115,9 @@ const submit = () =>{
             emptyCount++;
         }
     }
-    let cnt = 0;
-    if(store.ans.length<store.questions.length){
-        cnt = store.questions.length-store.ans.length;
-        data.amount = emptyCount+cnt;
-    }else{
-        data.amount = emptyCount;
-    }
-    if(emptyCount===0 && cnt===0){
+    if(emptyCount===0){
         data.submitState = true;
     }else{
-        // console.log(store.questions.length+"                    "+store.ans.length)
         data.submitState = false;
     }
     centerDialogVisible.value = true;
@@ -138,8 +130,7 @@ const finish = () =>{
         answer += store.ans[i].text;
     }
     let number: number = storeUser.curnum;
-    // router.replace({ path: "/main/finish"});  
-    console.log("当前是第"+number+"套题")
+    // console.log("当前是第"+number+"套题")
     apiFun.user.submit({
         select: number,
         answer: answer,
@@ -157,13 +148,8 @@ const finish = () =>{
             }else if(number===4){
                 storeUser.state4 = true;
             }
-            let currentTimeString = getCurrentTime();
-            storeUser.curtime = currentTimeString;
-            if(storeUser.state1===true && storeUser.state2===true && storeUser.state3===true && storeUser.state4===true){
-                router.replace({ path: "/main/finish"});  
-            }else{
-                router.replace({ path: "/main/option"});  
-            }
+            storeUser.curtime = getCurrentTime();
+            router.push({ path: "/main/finish"}); 
         }
     }).catch((err: any)=>{
       console.log(err);
@@ -174,6 +160,7 @@ const finish = () =>{
 const increase = () => {
     if(data.len-1<=data.curnum){
         let now = data.curnum+1;
+        // console.log("第"+now+"题的选项是:"+radio.value);
         conversion(radio.value,now);
         submit();
         ElNotification({
@@ -182,9 +169,10 @@ const increase = () => {
         })
     }else{
         let next = data.curnum+1;
-
+        // console.log("(下一个)题目序号:"+next+" 当前："+store.curstate)
         reversal(next);
         data.curnum+=1;
+        // console.log("当前题目编号:"+data.curnum);
         saveOpion();
     }
     store.curstate = 1;

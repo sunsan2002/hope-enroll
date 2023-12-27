@@ -138,8 +138,9 @@ const finish = () =>{
         answer += store.ans[i].text;
     }
     let number: number = storeUser.curnum;
-    // router.replace({ path: "/main/finish"});  
-    console.log("当前是第"+number+"套题")
+    let currentTimeString = getCurrentTime();
+    storeUser.curtime = currentTimeString;
+    // console.log("当前是第"+number+"套题")
     apiFun.user.submit({
         select: number,
         answer: answer,

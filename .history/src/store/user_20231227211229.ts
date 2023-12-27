@@ -50,7 +50,7 @@ export const user = defineStore('first', {
       {
         // key: 'myuser',
         storage: sessionStorage, // 默认是sessionStorage
-        paths: ['id','username','state','apply','state1','state2','state3','state4','curnum','curtime']
+        paths: ['id','username','state','apply','state1','state2','state3','state4',,'curtime']
       },
       {
         storage: localStorage, // 默认是sessionStorage

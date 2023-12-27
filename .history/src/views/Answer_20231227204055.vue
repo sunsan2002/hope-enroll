@@ -138,8 +138,7 @@ const finish = () =>{
         answer += store.ans[i].text;
     }
     let number: number = storeUser.curnum;
-    // router.replace({ path: "/main/finish"});  
-    console.log("当前是第"+number+"套题")
+    // console.log("当前是第"+number+"套题")
     apiFun.user.submit({
         select: number,
         answer: answer,
@@ -157,12 +156,11 @@ const finish = () =>{
             }else if(number===4){
                 storeUser.state4 = true;
             }
-            let currentTimeString = getCurrentTime();
-            storeUser.curtime = currentTimeString;
+            storeUser.curtime = getCurrentTime();
             if(storeUser.state1===true && storeUser.state2===true && storeUser.state3===true && storeUser.state4===true){
-                router.replace({ path: "/main/finish"});  
+               router.replace({ path: "/main/finish"});  
             }else{
-                router.replace({ path: "/main/option"});  
+                router.replace({ path: "/main/finish"});  
             }
         }
     }).catch((err: any)=>{

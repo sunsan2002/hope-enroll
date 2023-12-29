@@ -1,8 +1,8 @@
 <!--
  * @Author: sunsan 2390864551@qq.com
  * @Date: 2023-11-07 21:08:15
- * @LastEditors: sunsan 2390864551@qq.com
- * @LastEditTime: 2023-12-29 17:52:29
+ * @LastEditors: Fleurxxx 984209872@qq.com
+ * @LastEditTime: 2023-12-27 21:17:45
  * @FilePath: \hopeEnroll\hope_enroll\src\views\main\Body.vue
  * @Description: 介绍实验室（引导页）
 -->
@@ -141,7 +141,7 @@
         <div class="container3">
             <div class="right">
                 <h1 class="box-title  flag" v-observe="'active'">学习生活</h1>
-                <p class="description describe1 flag" v-observe="'active'">Hope实验室以培养学习与科研兴趣、实践动手能力、快速自学能力、思维能力为首要目标，以学科竞赛为牵引，秉承立志、修身、笃行、创新的理念，坚持厚德、务实、创新、求索的价值观，以成为国内一流的创新创业团队为愿景，从本科低年级开始进行人才培养，同时设立本科生朋辈导师制度，培养创新能力与教导能力。通过“学中干，干中学，带着学”的方式督促培养学生的学习能力与综合素质。</p>
+                <p class="description describe1 flag" v-observe="'active'">2003-至今,工作于吉首大学。曾任软件学院软件工程系主任,现任软件学院工程实训中心主任.曾获张家界市优秀教师，吉首大学师德标兵,吉首大学校级骨干教师.吉首大学教学新秀。积极培训和指导学生参加国家级学科竞赛。三年来指导学生获奖共100人次，获各类奖项30多项。</p>
             </div>
             <div class="left">
                 <el-card class="box-card flag1" v-observe="'active1'">
@@ -163,9 +163,7 @@
         <div class="container5">
             <div class="right">
                 <h1 class="box-title  flag" v-observe="'active'">日常活动</h1>
-                <p class="description describe1 flag" v-observe="'active'">
-                    在学习的同时，我们注重团队的休闲与互动。定期举办丰富多彩的团建活动，不仅加深了同事间的默契，也为工作环境注入了活力。我们秉持着“每月一善”的理念，共同投入爱心，回馈社会，让我们的努力不仅造福自己，也温暖了更多的人心。为了让团队更加紧密，我们定期举办温馨快乐的生日会，共同庆祝团队成员的生日，感受大家之间的温暖。此外，我们还鼓励在学习分享会上展示自己的学习成果和心得体会，轻松而不失正式，为团队成员提供了一个共享经验和知识的平台。
-</p>
+                <p class="description describe1 flag" v-observe="'active'">2003-至今,工作于吉首大学。曾任软件学院软件工程系主任,现任软件学院工程实训中心主任.曾获张家界市优秀教师，吉首大学师德标兵,吉首大学校级骨干教师.吉首大学教学新秀。积极培训和指导学生参加国家级学科竞赛。三年来指导学生获奖共100人次，获各类奖项30多项。</p>
             </div>
             <div class="left">
                 <el-card class="box-card flag1" v-observe="'active1'">
@@ -439,7 +437,7 @@ polygon {
 .button{
     position: absolute;
     left: 50%;
-    top: 530px;
+    top: 600px;
     background: #eeeeee;
     width: 15%;
     height: 45px;
@@ -797,7 +795,6 @@ polygon {
             width: 40%;
             float: left;
             margin-right:10%;
-            margin-top: 95px;
         }
         .left{
             width: 50%;

@@ -11,7 +11,7 @@
             <el-table-column prop="date" label="交卷时间" width="280" />
           </el-table>
         </div>
-        <el-button class="finish-btn"  @click="router.replace('/main')">已答完，返回主页面</el-button>
+        <el-button class="finish-btn"  @click="router.push('/main')">已答完，返回主页面</el-button>
     </div>
   </div>
 </template>

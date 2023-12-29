@@ -1,8 +1,8 @@
 <!--
  * @Author: sunsan 2390864551@qq.com
  * @Date: 2023-11-07 21:08:19
- * @LastEditors: sunsan 2390864551@qq.com
- * @LastEditTime: 2023-12-27 23:05:03
+ * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
+ * @LastEditTime: 2023-12-24 10:25:16
  * @FilePath: \hopeEnroll\hope_enroll\src\views\main\Top.vue
  * @Description: 顶部组件
 -->
@@ -14,19 +14,7 @@
       <div class="logo">Hope实验室</div>
     </div>
     <div class="right">
-      <el-popover placement="top" :width="160"  v-if="store.state">
-        <button
-        class="btn"
-        @click="logout()"
-      >退出登录</button
-    >
-    <template #reference>
-      <div class="login-box">
-      <p>{{ store.username }}</p>
-      <!-- <div class="triangle"></div> -->
-    </div>
-    </template>
-  </el-popover>
+      <p v-if="store.state">{{ store.username }}</p>
       <a v-else @click="clickLogin()">登录</a>
       <Login ref="open" />
     </div>
@@ -46,19 +34,9 @@ const store = user();
 // 获取子组件实例
 const open = ref()
 
-
-
 function clickLogin(){
   open.value.change();
 }
-
-const logout = () => {
-  window.localStorage.removeItem('token')
-  store.token= ''
-  store.state = false
-  window.location.href = '/main';
-}
-
 </script>
 
 <style lang="scss" scoped>
@@ -73,8 +51,6 @@ header {
   align-items: center;
   box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
 }
-
-
 
 .logoImg {
   width: 30px;
@@ -99,34 +75,4 @@ header {
   padding: 10px;
   cursor: pointer;
 }
-// .triangle {
-//       width: 0;
-//       height: 0;
-//       margin-top: 1px;
-//       border-left: 5px solid transparent;
-//       border-right: 5px solid transparent;
-//       border-bottom: 7px solid #018E98; /* 调整颜色 */
-//       transform: translate(-50%, -50%);
-//       transition: transform 0.3s ease-in-out;;
-//     }
-
-    // .triangle:hover {
-    //   transform: translate(-50%, -50%) rotate(180deg);
-    // }
-    .login-box{
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      gap: 14px;
-    }
-    .btn{
-      color: #018E98;
-      border: 0;
-      background-color: transparent;
-      font-weight: 600;
-      margin-left: 30%;
-      &:hover{
-        opacity: 0.7;
-      }
-    }
 </style>

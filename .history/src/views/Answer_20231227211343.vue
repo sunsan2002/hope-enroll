@@ -146,7 +146,7 @@ const finish = () =>{
     })
     .then((res: any) => {
         // console.log("存储答案信息:")
-        console.log(res);
+        // console.log(res);
         if(res.code === 200){
             if(number===1){
                 storeUser.state1 = true;
@@ -177,7 +177,7 @@ const increase = () => {
         conversion(radio.value,now);
         submit();
         ElNotification({
-            title: '温馨提示', 
+            title: '温馨提示',
             message: h('i', { style: 'color: teal' }, '没有再多题目啦'),
         })
     }else{

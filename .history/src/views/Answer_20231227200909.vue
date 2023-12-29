@@ -138,15 +138,14 @@ const finish = () =>{
         answer += store.ans[i].text;
     }
     let number: number = storeUser.curnum;
-    // router.replace({ path: "/main/finish"});  
-    console.log("当前是第"+number+"套题")
+    // console.log("当前是第"+number+"套题")
     apiFun.user.submit({
         select: number,
         answer: answer,
     })
     .then((res: any) => {
         // console.log("存储答案信息:")
-        console.log(res);
+        // console.log(res);
         if(res.code === 200){
             if(number===1){
                 storeUser.state1 = true;
@@ -157,13 +156,8 @@ const finish = () =>{
             }else if(number===4){
                 storeUser.state4 = true;
             }
-            let currentTimeString = getCurrentTime();
-            storeUser.curtime = currentTimeString;
-            if(storeUser.state1===true && storeUser.state2===true && storeUser.state3===true && storeUser.state4===true){
-                router.replace({ path: "/main/finish"});  
-            }else{
-                router.replace({ path: "/main/option"});  
-            }
+            storeUser.curtime = getCurrentTime();
+            router.replace({ path: "/main/finish"}); 
         }
     }).catch((err: any)=>{
       console.log(err);
@@ -177,7 +171,7 @@ const increase = () => {
         conversion(radio.value,now);
         submit();
         ElNotification({
-            title: '温馨提示', 
+            title: '温馨提示',
             message: h('i', { style: 'color: teal' }, '没有再多题目啦'),
         })
     }else{

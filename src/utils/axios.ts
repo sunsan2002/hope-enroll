@@ -1,8 +1,8 @@
 /*
- * @Author: STATICHIT
+ * @Author: SUNSAN
  * @Date: 2023-04-26 19:13:07
  * @LastEditors: sunsan 2390864551@qq.com
- * @LastEditTime: 2023-12-27 15:32:09
+ * @LastEditTime: 2023-12-27 22:13:20
  * @FilePath: \resume_analysis\src\utils\axios.js
  * @Description: 封装请求
  */
@@ -20,7 +20,7 @@ let config = {
 }
 
 
-let store = user();
+const store = user();
 const storedToken = store.token;
 const _axios = axios.create(config);
 

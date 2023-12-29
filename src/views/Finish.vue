@@ -12,7 +12,7 @@
           </el-table>
           <!-- <el-button class="finish-btn"  @click="router.push('/main/option')">已答完，返回主页面</el-button> -->
         </div>
-        <el-button class="finish-btn"  @click="router.push('/main/option')">已答完，返回主页面</el-button>
+        <el-button class="finish-btn"  @click="router.replace('/main')">已答完，返回主页面</el-button>
     </div>
   </div>
 </template>

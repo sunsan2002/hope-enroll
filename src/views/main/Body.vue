@@ -2,7 +2,7 @@
  * @Author: sunsan 2390864551@qq.com
  * @Date: 2023-11-07 21:08:15
  * @LastEditors: sunsan 2390864551@qq.com
- * @LastEditTime: 2023-12-29 17:52:29
+ * @LastEditTime: 2024-01-02 08:43:03
  * @FilePath: \hopeEnroll\hope_enroll\src\views\main\Body.vue
  * @Description: 介绍实验室（引导页）
 -->
@@ -770,12 +770,12 @@ polygon {
         left:10%;
         right:10%;
         .right{
-            width: 50%;
+            width: 48%;
             float: left;
-            
+            margin-right: 5%;
         }
         .left{
-            width: 38%;
+            width: 35%;
             float: left;
             margin-top: 35px;
             margin-left:12%;

@@ -72,7 +72,7 @@ function login(){
         store.state3 = res.msg.state3;
         store.state4 = res.msg.state4;
         store.state = true;
-        sessionStorage.setItem("token",res.msg.token);
+        window.localStorage.setItem("token",res.msg.token);
         ElMessage.success("登录成功");
         router.push({ path: "/main" });
       }else{

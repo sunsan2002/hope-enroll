@@ -2,7 +2,7 @@
  * @Author: SUNSAN
  * @Date: 2023-04-26 19:13:07
  * @LastEditors: sunsan 2390864551@qq.com
- * @LastEditTime: 2023-12-27 22:13:20
+ * @LastEditTime: 2023-12-31 17:18:22
  * @FilePath: \resume_analysis\src\utils\axios.js
  * @Description: 封装请求
  */
@@ -12,7 +12,7 @@ import qs from 'qs';
 import router from '../router/index'
 import{ user } from '../store/user'
 
-let baseURL = 'http://192.168.50.173:8080/'
+let baseURL = 'http://118.178.231.36:8080/'
 
 let config = {
   baseURL: baseURL,
@@ -20,14 +20,14 @@ let config = {
 }
 
 
-const store = user();
-const storedToken = store.token;
+
 const _axios = axios.create(config);
 
 _axios.interceptors.request.use(
   config => {
+    console.log(window.localStorage.getItem('token'))
   // 每次发送请求之前都检测vuex是否存有token，放在请求头发送给服务器// Authorization是根据后端自走义字段
-  config.headers.Authorization = storedToken;
+  config.headers.Authorization = window.localStorage.getItem('token');
   return config;
   },
   error => {

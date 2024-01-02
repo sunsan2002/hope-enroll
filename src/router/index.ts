@@ -64,7 +64,7 @@ const router = createRouter({
       next();
     } else {
       // 如果不是 /login，判断是否有 token
-      if (!sessionStorage.getItem('token')) {
+      if (!window.localStorage.getItem('token')) {
         // 如果没有，则跳至登录页面
         next({ path: "/main/arithmetic" });
       } else {

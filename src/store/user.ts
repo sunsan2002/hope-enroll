@@ -52,10 +52,10 @@ export const user = defineStore('first', {
         storage: sessionStorage, // 默认是sessionStorage
         paths: ['id','username','state','apply','state1','state2','state3','state4','curnum','curtime']
       },
-      {
-        storage: localStorage, // 默认是sessionStorage
-        paths: ['token']
-      }
+      // {
+      //   storage: localStorage, // 默认是sessionStorage
+      //   paths: ['token']
+      // }
     ],
   }
 });

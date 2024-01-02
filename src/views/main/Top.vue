@@ -2,7 +2,7 @@
  * @Author: sunsan 2390864551@qq.com
  * @Date: 2023-11-07 21:08:19
  * @LastEditors: sunsan 2390864551@qq.com
- * @LastEditTime: 2023-12-27 23:05:03
+ * @LastEditTime: 2023-12-31 17:40:47
  * @FilePath: \hopeEnroll\hope_enroll\src\views\main\Top.vue
  * @Description: 顶部组件
 -->
@@ -34,7 +34,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ClickOutside } from 'element-plus';
+import { ClickOutside, ElMessage } from 'element-plus';
 import { ref, reactive, computed, watch, onMounted,watchEffect, toRefs } from 'vue';
 import Login from '../Login.vue'
 import { user } from '../../store/user';
@@ -56,7 +56,8 @@ const logout = () => {
   window.localStorage.removeItem('token')
   store.token= ''
   store.state = false
-  window.location.href = '/main';
+  router.push('/');
+  ElMessage.success('已退出登录')
 }
 
 </script>

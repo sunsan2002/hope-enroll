@@ -1,8 +1,8 @@
 /*
  * @Author: sunsan 2390864551@qq.com
  * @Date: 2023-11-05 20:50:59
- * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
- * @LastEditTime: 2023-12-21 03:41:30
+ * @LastEditors: sunsan 2390864551@qq.com
+ * @LastEditTime: 2024-03-04 21:01:11
  * @FilePath: \hopeEnroll\hope_enroll\src\main.ts
  * @Description: 项目的文件入口，进行实例化Vue，赋值项目中经常会用到的插件和CSS样式以及存储全局变量
  */
@@ -21,6 +21,7 @@ import './styles/index.scss'
 // import locale from 'element-plus/lib/locale/lang/zh-cn';
 import './assets/main.css'
 import { observe } from './utils/directives';
+import lazyLoad from './directives/lazy'
 
 
 // 生成 Vue 实例 app
@@ -29,6 +30,7 @@ app.use(router)
 app.use(ElementPlus)
 app.use(createPinia())
 app.use(store)
+app.directive('lazy', lazyLoad)
 app.directive("observe", observe);
 
 

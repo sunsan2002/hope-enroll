@@ -2,8 +2,8 @@
  * @Author: sunsan 2390864551@qq.com
  * @Date: 2023-11-07 21:08:15
  * @LastEditors: sunsan 2390864551@qq.com
- * @LastEditTime: 2024-01-02 08:43:03
- * @FilePath: \hopeEnroll\hope_enroll\src\views\main\Body.vue
+ * @LastEditTime: 2024-03-04 22:15:38
+ * @FilePath: \hopeEnroll\hope_enroll\v-lazy\views\main\Body.vue
  * @Description: 介绍实验室（引导页）
 -->
 
@@ -25,14 +25,14 @@
             </div>
         </section>
         <section class="parallax">
-            <img src="../../assets/homepage/hill1.png" ref="hill1">
-            <img src="../../assets/homepage/hill2.png" ref="hill2">
-            <img src="../../assets/homepage/hill3.png" ref="hill3">
-            <img src="../../assets/homepage/hill4.png" ref="hill4">
-            <img src="../../assets/homepage/hill5.png" ref="hill5">
-            <img src="../../assets/homepage/tree.png" ref="tree">
-            <img src="../../assets/homepage/leaf.png" ref="leaf">
-            <img src="../../assets/homepage/plant.png" ref="plant">
+            <img v-lazy="require('../../assets/homepage/hill1.png')" ref="hill1">
+            <img v-lazy="require('../../assets/homepage/hill2.png')" ref="hill2">
+            <img v-lazy="require('../../assets/homepage/hill3.png')" ref="hill3">
+            <img v-lazy="require('../../assets/homepage/hill4.png')" ref="hill4">
+            <img v-lazy="require('../../assets/homepage/hill5.png')" ref="hill5">
+            <img v-lazy="require('../../assets/homepage/tree.png')" ref="tree">
+            <img v-lazy="require('../../assets/homepage/leaf.png')" ref="leaf">
+            <img v-lazy="require('../../assets/homepage/plant.png')" ref="plant">
         </section>
         <Login ref="open" />
       </div>
@@ -62,7 +62,7 @@
             <h1 class="subtitle-l flag" v-observe="'active'" >薪资对比</h1>
             <p class="description-l flag" v-observe="'active'">近五届实验室成员就业及薪资情况</p>
             <div class="salary-img">
-                <img class="simg" src="../../assets/photo/薪资对比.png"/>
+                <img class="simg" v-lazy="require('../../assets/photo/薪资对比.png')"/>
             </div>
         </div>
 
@@ -98,13 +98,13 @@
                 <div class="xian"></div>
                 <div class="city_ul">
                     <div class="city_li">
-                        <img src="../../assets/jiaosepage/done.png" alt="" class="done">
-                        <img src="../../assets/jiaosepage/xuanzhong.png" class="xuanzhong" v-if="cut===1" alt="">
+                        <img v-lazy="require('../../assets/jiaosepage/done.png')" alt="" class="done">
+                        <img v-lazy="require('../../assets/jiaosepage/xuanzhong.png')" class="xuanzhong" v-if="cut===1" alt="">
                         <router-link class="city_Mengde" to="/main/arithmetic" @click="di(1)" active-class="xuancity">算法组</router-link>
                     </div>
                     <div class="city_li">
-                        <img src="../../assets/jiaosepage/done.png" alt="" class="done">
-                        <img src="../../assets/jiaosepage/xuanzhong.png" class="xuanzhong" v-if="cut===2" alt="">
+                        <img v-lazy="require('../../assets/jiaosepage/done.png')" alt="" class="done">
+                        <img v-lazy="require('../../assets/jiaosepage/xuanzhong.png')" class="xuanzhong" v-if="cut===2" alt="">
                         <router-link class="city_Liyue" to="/main/in" @click="di(2)" active-class="xuancity">项目组</router-link>
                     </div>
                 </div>
@@ -122,7 +122,7 @@
         <div class="container2">
             <div class="right">
                <el-card class="box-card flag1" v-observe="'active1'">
-                    <img class="photo "  src="../../assets/photo/黄sir.jpg"  />
+                    <img class="photo "  v-lazy="require('../../assets/photo/黄sir.jpg')"  />
                 </el-card> 
             </div>
             <div class="left">
@@ -145,14 +145,14 @@
             </div>
             <div class="left">
                 <el-card class="box-card flag1" v-observe="'active1'">
-                    <img class="photo "  src="../../assets/photo/日常2.jpg"  />
+                    <img class="photo "  v-lazy="require('../../assets/photo/日常2.jpg')"  />
                 </el-card> 
             </div>
         </div>
         <div class="container4">
             <div class="right">
                <el-card class="box-card flag1" v-observe="'active1'">
-                    <img class="photo "  src="../../assets/photo/答辩2.png"  />
+                    <img class="photo "  v-lazy="require('../../assets/photo/答辩2.png')"  />
                 </el-card> 
             </div>
             <div class="left">
@@ -169,7 +169,7 @@
             </div>
             <div class="left">
                 <el-card class="box-card flag1" v-observe="'active1'">
-                    <img class="photo "  src="../../assets/photo/日常1.jpg"  />
+                    <img class="photo "  v-lazy="require('../../assets/photo/日常1.jpg')"  />
                 </el-card> 
             </div>
         </div>
@@ -188,6 +188,10 @@ import { user } from '../../store/user';
 
 
 const store = user();
+
+const getImageUrl = (name) => {
+  return new URL(`../../assets/${name}`, import.meta.url).href
+}
 
 const { text, leaf, hill1, hill4, hill5 } = toRefs({
   text: ref(null),
@@ -764,6 +768,7 @@ polygon {
             }
         }
     }
+    // ABBAABABABAABABABABAABBAABBAABBAABABAABBABABBAABBABAABBAABAABABBAABBABBAABABBAABABBAABBAABAABABBAABA
     .container4{
         position: absolute;
         top:1550px;

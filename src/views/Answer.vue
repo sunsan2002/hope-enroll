@@ -83,7 +83,7 @@ let data = reactive({
     curnum: store.curnum,
     len: 0,
     amount:0,
-    submitState:true,
+    submitState:true, //提交按钮禁用
 })
 let radio = ref(store.nxtradio);
 let options = reactive([
@@ -110,7 +110,6 @@ const getCurrentTime = () => {
 const submit = () =>{
     let emptyCount = 0;
     for (let i = 0; i < store.ans.length; i++) {
-        // 使用条件判断检查数组元素是否为空值
         if (store.ans[i].text === null || store.ans[i].text === undefined || store.ans[i].text === '') {
             emptyCount++;
         }
@@ -125,7 +124,6 @@ const submit = () =>{
     if(emptyCount===0 && cnt===0){
         data.submitState = true;
     }else{
-        // console.log(store.questions.length+"                    "+store.ans.length)
         data.submitState = false;
     }
     centerDialogVisible.value = true;

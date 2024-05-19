@@ -1,0 +1,26 @@
+{
+    "sourceFile": ".postcss.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1709564771400,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1709564884571,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,12 @@\n+/*\r\n+ * @Author: Fleurxxx 984209872@qq.com\r\n+ * @Date: 2024-03-04 23:05:59\r\n+ * @LastEditors: Fleurxxx 984209872@qq.com\r\n+ * @LastEditTime: 2024-03-04 23:06:11\r\n+ * @FilePath: \\hope-enroll\\.postcss.js\r\n+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE\r\n+ */\r\n module.exports = {\r\n     plugins: {\r\n       autoprefixer: {},\r\n       \"postcss-px-to-viewport\": {\r\n"
+                },
+                {
+                    "date": 1709684170584,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,24 +1,17 @@\n-/*\r\n- * @Author: Fleurxxx 984209872@qq.com\r\n- * @Date: 2024-03-04 23:05:59\r\n- * @LastEditors: Fleurxxx 984209872@qq.com\r\n- * @LastEditTime: 2024-03-04 23:06:11\r\n- * @FilePath: \\hope-enroll\\.postcss.js\r\n- * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE\r\n- */\r\n-module.exports = {\r\n-    plugins: {\r\n-      autoprefixer: {},\r\n-      \"postcss-px-to-viewport\": {\r\n-        viewportWidth: 1920, // (Number) 设计图大小 自己按照实际情况配置下就行了\r\n-        viewportHeight: 1080, // (Number) \r\n-        unitPrecision: 3, // (Number) 单位转换后保留的精度\r\n-        viewportUnit: \"vw\", // (String) 希望使用的视口单位\r\n-        selectorBlackList: [\".ignore\"], // 需要忽略转换的类名，比如这里是忽略转换  class为 ignore的盒子\r\n-        minPixelValue: 1, // (Number) 设置最小的转换数值，如果为1的话，只有大于1的值会被转换\r\n-        mediaQuery: false // (Boolean) 媒体查询里的单位是否需要转换单位\r\n-      }\r\n-    }\r\n-  };\r\n-  \r\n-  \n\\ No newline at end of file\n+// rem等比适配配置文件\r\n+// 基准大小\r\n+const baseSize = 37.5 // 注意此值要与 postcss.config.js 文件中的 rootValue保持一致\r\n+// 设置 rem 函数\r\n+function setRem () {\r\n+  // 当前页面宽度相对于 375宽的缩放比例，可根据自己需要修改,一般设计稿都是宽750(图方便可以拿到设计图后改过来)。\r\n+  const scale = document.documentElement.clientWidth / 375\r\n+  // 设置页面根节点字体大小（“Math.min(scale, 2)” 指最高放大比例为2，可根据实际业务需求调整）\r\n+  document.documentElement.style.fontSize = baseSize * Math.min(scale, 2) + 'px'\r\n+}\r\n+// 初始化\r\n+setRem()\r\n+// 改变窗口大小时重新设置 rem\r\n+window.onresize = function () {\r\n+  console.log(\"我执行了\")\r\n+  setRem()\r\n+}\r\n"
+                }
+            ],
+            "date": 1709564771400,
+            "name": "Commit-0",
+            "content": "module.exports = {\r\n    plugins: {\r\n      autoprefixer: {},\r\n      \"postcss-px-to-viewport\": {\r\n        viewportWidth: 1920, // (Number) 设计图大小 自己按照实际情况配置下就行了\r\n        viewportHeight: 1080, // (Number) \r\n        unitPrecision: 3, // (Number) 单位转换后保留的精度\r\n        viewportUnit: \"vw\", // (String) 希望使用的视口单位\r\n        selectorBlackList: [\".ignore\"], // 需要忽略转换的类名，比如这里是忽略转换  class为 ignore的盒子\r\n        minPixelValue: 1, // (Number) 设置最小的转换数值，如果为1的话，只有大于1的值会被转换\r\n        mediaQuery: false // (Boolean) 媒体查询里的单位是否需要转换单位\r\n      }\r\n    }\r\n  };\r\n  \r\n  "
+        }
+    ]
+}

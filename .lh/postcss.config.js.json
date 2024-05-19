@@ -1,0 +1,46 @@
+{
+    "sourceFile": "postcss.config.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1709564966990,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1709684090732,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,21 +1,10 @@\n module.exports = {\r\n-    // 需要配置的相关插件\r\n-    plugins: {\r\n-      // 自动添加浏览器厂商声明前缀,用来兼容不同的浏览器\r\n-      // 因为Vue-CLI是通过项目中的.browserslistrc 文件来配置要兼容的环境信息的 所以我们这里并不需要\r\n-       autoprefixer: {\r\n-         browsers: ['Android >= 4.0', 'iOS >= 8']\r\n-       },\r\n-      // 把px转为rem\r\n-      'postcss-pxtorem': {\r\n-        // 转换的根元素的基准值\r\n-        // 正常去情下按照你的设计稿来\r\n-        // 750 宽的设计稿， 750 / 10 = 75\r\n-        // 370 宽的设计稿， 370 / 10 = 37.5\r\n-        rootValue: 37.5,\r\n-        // 需要转换的CSS属性，*就是所有属性都要转换\r\n-        propList: ['*']\r\n+    \"plugins\": {\r\n+      \"postcss-pxtorem\": {\r\n+        rootValue: 37.5, // Vant 官方根字体大小是 37.5\r\n+        propList: ['*'],\r\n+        selectorBlackList: ['.norem'] // 过滤掉.norem-开头的class，不进行rem转换\r\n       }\r\n     }\r\n   }\r\n-\r\n+  \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1709684348949,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,11 @@\n module.exports = {\r\n-    \"plugins\": {\r\n-      \"postcss-pxtorem\": {\r\n-        rootValue: 37.5, // Vant 官方根字体大小是 37.5\r\n-        propList: ['*'],\r\n-        selectorBlackList: ['.norem'] // 过滤掉.norem-开头的class，不进行rem转换\r\n+    plugins: {\r\n+      'autoprefixer': {\r\n+        browsers: ['Android >= 4.0', 'iOS >= 7']\r\n+      },\r\n\\ No newline at end of file\n+      'postcss-pxtorem': {\r\n+        rootValue: 16,//结果为：设计稿元素尺寸/16，比如元素宽320px,最终页面会换算成 20rem\r\n+        propList: ['*']\r\n       }\r\n     }\r\n-  }\r\n-  \n+  }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1709684579566,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n module.exports = {\r\n-    plugins: {\r\n-      'autoprefixer': {\r\n-        browsers: ['Android >= 4.0', 'iOS >= 7']\r\n+    css: {\r\n+      loaderOptions: {\r\n+        postcss: {\r\n+          config: {\r\n+            path: '.postcssrc.js',\r\n+          },\r\n+        },\r\n\\ No newline at end of file\n       },\r\n-      'postcss-pxtorem': {\r\n-        rootValue: 16,//结果为：设计稿元素尺寸/16，比如元素宽320px,最终页面会换算成 20rem\r\n-        propList: ['*']\r\n-      }\r\n-    }\r\n-  }\n+    },\r\n+  };\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1709684878845,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,23 @@\n module.exports = {\r\n     css: {\r\n-      loaderOptions: {\r\n         postcss: {\r\n-          config: {\r\n-            path: '.postcssrc.js',\r\n-          },\r\n+          plugins: [\r\n+            autoprefixer({\r\n+              overrideBrowserslist: [\r\n+                \"Android 4.1\",\r\n+                \"iOS 7.1\",\r\n+                \"Chrome > 31\",\r\n+                \"ff > 31\",\r\n+                \"ie >= 8\",\r\n+              ],\r\n+            }),\r\n+            postCssPxToRem({\r\n+              // 自适应，px>rem转换\r\n+              rootValue: 75, // 75表示750设计稿，37.5表示375设计稿\r\n+              propList: [\"*\"], // 需要转换的属性，这里选择全部都进行转换\r\n+              selectorBlackList: [\".van\"], // 过滤掉van-开头的class，不进行rem转换\r\n+              exclude: \"/node_modules\", // 忽略包文件转换rem\r\n+            }),\r\n+          ],\r\n         },\r\n-      },\r\n-    },\r\n   };\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1709684884415,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,5 +19,6 @@\n               exclude: \"/node_modules\", // 忽略包文件转换rem\r\n             }),\r\n           ],\r\n         },\r\n+        }\r\n   };\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1709684894700,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,24 @@\n+module.exports = {\r\n+    css: {\r\n+        postcss: {\r\n+          plugins: [\r\n+            autoprefixer({\r\n+              overrideBrowserslist: [\r\n+                \"Android 4.1\",\r\n+                \"iOS 7.1\",\r\n+                \"Chrome > 31\",\r\n+                \"ff > 31\",\r\n+                \"ie >= 8\",\r\n+              ],\r\n+            }),\r\n+            postCssPxToRem({\r\n+              // 自适应，px>rem转换\r\n+              rootValue: 75, // 75表示750设计稿，37.5表示375设计稿\r\n+              propList: [\"*\"], // 需要转换的属性，这里选择全部都进行转换\r\n+              selectorBlackList: [\".van\"], // 过滤掉van-开头的class，不进行rem转换\r\n+              exclude: \"/node_modules\", // 忽略包文件转换rem\r\n+            }),\r\n+          ],\r\n+        },\r\n+    }\r\n+  };\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1716131856592,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,30 +19,10 @@\n               exclude: \"/node_modules\", // 忽略包文件转换rem\r\n             }),\r\n           ],\r\n         },\r\n-    }\r\n-  };\n-module.exports = {\r\n-    css: {\r\n-        postcss: {\r\n-          plugins: [\r\n-            autoprefixer({\r\n-              overrideBrowserslist: [\r\n-                \"Android 4.1\",\r\n-                \"iOS 7.1\",\r\n-                \"Chrome > 31\",\r\n-                \"ff > 31\",\r\n-                \"ie >= 8\",\r\n-              ],\r\n-            }),\r\n-            postCssPxToRem({\r\n-              // 自适应，px>rem转换\r\n-              rootValue: 75, // 75表示750设计稿，37.5表示375设计稿\r\n-              propList: [\"*\"], // 需要转换的属性，这里选择全部都进行转换\r\n-              selectorBlackList: [\".van\"], // 过滤掉van-开头的class，不进行rem转换\r\n-              exclude: \"/node_modules\", // 忽略包文件转换rem\r\n-            }),\r\n-          ],\r\n-        },\r\n-        }\r\n+    },\r\n+    plugins: [\r\n+      require('postcss-import'),\r\n+      require('autoprefixer'),\r\n+    ]\r\n   };\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1709564966990,
+            "name": "Commit-0",
+            "content": "module.exports = {\r\n    // 需要配置的相关插件\r\n    plugins: {\r\n      // 自动添加浏览器厂商声明前缀,用来兼容不同的浏览器\r\n      // 因为Vue-CLI是通过项目中的.browserslistrc 文件来配置要兼容的环境信息的 所以我们这里并不需要\r\n       autoprefixer: {\r\n         browsers: ['Android >= 4.0', 'iOS >= 8']\r\n       },\r\n      // 把px转为rem\r\n      'postcss-pxtorem': {\r\n        // 转换的根元素的基准值\r\n        // 正常去情下按照你的设计稿来\r\n        // 750 宽的设计稿， 750 / 10 = 75\r\n        // 370 宽的设计稿， 370 / 10 = 37.5\r\n        rootValue: 37.5,\r\n        // 需要转换的CSS属性，*就是所有属性都要转换\r\n        propList: ['*']\r\n      }\r\n    }\r\n  }\r\n\r\n"
+        }
+    ]
+}

@@ -1,8 +1,8 @@
 /*
  * @Author: sunsan 2390864551@qq.com
  * @Date: 2023-11-05 20:50:59
- * @LastEditors: sunsan 2390864551@qq.com
- * @LastEditTime: 2023-12-26 23:20:36
+ * @LastEditors: Fleurxxx 984209872@qq.com
+ * @LastEditTime: 2024-01-04 20:24:43
  * @FilePath: \hopeEnroll\hope_enroll\src\router\index.ts
  * @Description: 路由配置
  */
@@ -58,20 +58,20 @@ const router = createRouter({
 });
 
 
- router.beforeEach((to, from, next) => {
-    if (to.path == "/main/arithmetic") {
-      // 如果路径是 /login 则正常执行
-      next();
-    } else {
-      // 如果不是 /login，判断是否有 token
-      if (!window.localStorage.getItem('token')) {
-        // 如果没有，则跳至登录页面
-        next({ path: "/main/arithmetic" });
-      } else {
-        // 否则继续执行
-      next()
-      }
-    }
- });
+//  router.beforeEach((to, from, next) => {
+//     if (to.path == "/main/arithmetic") {
+//       // 如果路径是 /login 则正常执行
+//       next();
+//     } else {
+//       // 如果不是 /login，判断是否有 token
+//       if (!sessionStorage.getItem('token')) {
+//         // 如果没有，则跳至登录页面
+//         next({ path: "/main/arithmetic" });
+//       } else {
+//         // 否则继续执行
+//       next()
+//       }
+//     }
+//  });
 
 export default router;

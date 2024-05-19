@@ -1,0 +1,22 @@
+{
+    "sourceFile": "package.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1716132261502,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1716132302220,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n   \"private\": true,\r\n   \"scripts\": {\r\n     \"serve\": \"vue-cli-service serve --port 4001\",\r\n     \"build\": \"vue-cli-service build\",\r\n-    \"build-css\": \"postcss src/main.css -o dist/main.css\"\r\n+    \"build-css\": \"postcss src//main.css -o dist/main.css\"\r\n   },\r\n   \"dependencies\": {\r\n     \"amfe-flexible\": \"^2.2.1\",\r\n     \"animate.css\": \"^4.1.1\",\r\n"
+                }
+            ],
+            "date": 1716132261502,
+            "name": "Commit-0",
+            "content": "{\r\n  \"name\": \"hope_enroll\",\r\n  \"version\": \"0.1.0\",\r\n  \"private\": true,\r\n  \"scripts\": {\r\n    \"serve\": \"vue-cli-service serve --port 4001\",\r\n    \"build\": \"vue-cli-service build\",\r\n    \"build-css\": \"postcss src/main.css -o dist/main.css\"\r\n  },\r\n  \"dependencies\": {\r\n    \"amfe-flexible\": \"^2.2.1\",\r\n    \"animate.css\": \"^4.1.1\",\r\n    \"axios\": \"^1.6.2\",\r\n    \"core-js\": \"^3.8.3\",\r\n    \"element-plus\": \"^2.4.2\",\r\n    \"file-saver\": \"^2.0.5\",\r\n    \"gsap\": \"^3.12.3\",\r\n    \"jwt-decode\": \"^4.0.0\",\r\n    \"pinia\": \"^2.1.7\",\r\n    \"pinia-persistedstate-plugin\": \"^0.1.0\",\r\n    \"pinia-plugin-persist\": \"^1.0.0\",\r\n    \"pinia-plugin-persistedstate\": \"^3.2.0\",\r\n    \"postcss-px-to-viewport\": \"^1.1.1\",\r\n    \"route\": \"^0.2.5\",\r\n    \"vue\": \"^3.2.13\",\r\n    \"vue-class-component\": \"^8.0.0-0\",\r\n    \"vue-router\": \"^4.2.5\",\r\n    \"vuex\": \"^4.0.2\",\r\n    \"xlsx\": \"^0.18.5\"\r\n  },\r\n  \"devDependencies\": {\r\n    \"@types/node\": \"^20.9.0\",\r\n    \"@vue/cli-plugin-babel\": \"~5.0.0\",\r\n    \"@vue/cli-plugin-router\": \"~5.0.0\",\r\n    \"@vue/cli-plugin-typescript\": \"~5.0.0\",\r\n    \"@vue/cli-service\": \"~5.0.0\",\r\n    \"autoprefixer\": \"^10.4.19\",\r\n    \"normalize.css\": \"^8.0.1\",\r\n    \"postcss\": \"^8.4.35\",\r\n    \"postcss-cli\": \"^11.0.0\",\r\n    \"postcss-import\": \"^16.1.0\",\r\n    \"postcss-pxtorem\": \"^6.1.0\",\r\n    \"sass\": \"^1.32.7\",\r\n    \"sass-loader\": \"^12.0.0\",\r\n    \"typescript\": \"~4.5.5\",\r\n    \"unplugin-vue-components\": \"^0.26.0\"\r\n  },\r\n  \"browserslist\": [\r\n    \"> 1%\",\r\n    \"last 2 versions\",\r\n    \"not dead\",\r\n    \"not ie 11\"\r\n  ]\r\n}\r\n"
+        }
+    ]
+}

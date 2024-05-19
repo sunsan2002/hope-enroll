@@ -1,0 +1,26 @@
+{
+    "sourceFile": ".postcssrc.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1709684519140,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1709684657953,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n /*\r\n  * @Author: Fleurxxx 984209872@qq.com\r\n  * @Date: 2024-03-04 23:05:59\r\n  * @LastEditors: Fleurxxx 984209872@qq.com\r\n- * @LastEditTime: 2024-03-06 08:21:59\r\n+ * @LastEditTime: 2024-03-06 08:24:17\r\n  * @FilePath: \\hope-enroll\\.postcssrc.js\r\n  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE\r\n  */\r\n module.exports = {\r\n"
+                },
+                {
+                    "date": 1709684666911,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,16 @@\n+/*\r\n+ * @Author: Fleurxxx 984209872@qq.com\r\n+ * @Date: 2024-03-04 23:05:59\r\n+ * @LastEditors: Fleurxxx 984209872@qq.com\r\n+ * @LastEditTime: 2024-03-06 08:24:17\r\n+ * @FilePath: \\hope-enroll\\.postcssrc.js\r\n+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE\r\n+ */\r\n+module.exports = {\r\n+  plugins: {\r\n+    'postcss-pxtorem': {\r\n+      rootValue: 25,\r\n+      propList: ['*'],\r\n+    },\r\n+  },\r\n+};\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1709684519140,
+            "name": "Commit-0",
+            "content": "module.exports = {\r\n  plugins: {\r\n    'postcss-pxtorem': {\r\n      rootValue: 75,\r\n      propList: ['*'],\r\n    },\r\n  },\r\n};"
+        }
+    ]
+}
